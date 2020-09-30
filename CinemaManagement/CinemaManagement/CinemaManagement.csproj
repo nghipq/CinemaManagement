@@ -124,6 +124,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAO\CinemaDAO.cs" />
+    <Compile Include="DAO\FilmDAO.cs" />
+    <Compile Include="DAO\PersonDAO.cs" />
+    <Compile Include="DAO\ProducerDAO.cs" />
+    <Compile Include="DAO\RoomDAO.cs" />
+    <Compile Include="DAO\RoomSeatDAO.cs" />
+    <Compile Include="DAO\ScheduleDAO.cs" />
+    <Compile Include="DAO\SessionDAO.cs" />
+    <Compile Include="DAO\Ticket.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
+    <Compile Include="DBConnection\DBConnection.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
