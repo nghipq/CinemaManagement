@@ -143,6 +143,24 @@
     <Compile Include="Models\Bill.cs" />
     <Compile Include="Models\BillDetail.cs" />
     <Compile Include="Models\Categories.cs" />
+    <Compile Include="Models\CategoryInFilm.cs" />
+    <Compile Include="Models\Cinema.cs" />
+    <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\Films.cs" />
+    <Compile Include="Models\Formality.cs" />
+    <Compile Include="Models\Graphics.cs" />
+    <Compile Include="Models\Nationality.cs" />
+    <Compile Include="Models\PersonInFilm.cs" />
+    <Compile Include="Models\Persons.cs" />
+    <Compile Include="Models\Producers.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\RoomSeat.cs" />
+    <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\Staff.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
