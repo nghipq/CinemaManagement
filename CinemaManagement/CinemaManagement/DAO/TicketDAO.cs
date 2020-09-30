@@ -1,11 +1,12 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace CinemaManagement.DAO
 {
-    public class Ticket
+    public class TicketDAO
     {
         public MySqlConnection conn { get; set; }
 
