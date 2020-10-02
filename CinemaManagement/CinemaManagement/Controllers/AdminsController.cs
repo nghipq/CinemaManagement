@@ -13,7 +13,10 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
-
+        public ActionResult getAllRoomSeatByRoomId()
+        {
+            return View();
+        }
         [HttpGet]
         public ActionResult insertFilm()
         {
