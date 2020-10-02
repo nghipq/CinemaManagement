@@ -19,6 +19,9 @@ namespace CinemaManagement.Controllers
         // GET: insertProducers
         [HttpGet]
         public ActionResult insertProducer()
+        
+        [HttpGet]
+        public ActionResult insertFilm()
         {
             return View();
         }
@@ -41,5 +44,29 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
+        
+        [HttpPost]
+        public ActionResult insertFilmAction(FormCollection formCollection)
+        {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult insertShedule()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult InsertRoom()
+        {
+            return View();
+        }
+
     }
 }
