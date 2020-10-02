@@ -24,7 +24,7 @@ namespace CinemaManagement.DAO
             {
                 try
                 {
-                    string insertData = "insert into Producer(P_Name,id_N,Description,Birthday,Address,PhoneNumber,Email,Status" +
+                    string insertData = "insert into Producers(P_Name, id_N, Description, Birthday, Address, PhoneNumber, Email, Status)" +
                     "values (@P_Name, @id_N, @Description, @Birthday, @Address, @PhoneNumber, @Email, @Status)";
                     MySqlCommand command = new MySqlCommand(insertData, conn);
 
@@ -38,7 +38,6 @@ namespace CinemaManagement.DAO
                     command.Parameters.AddWithValue("@Status", Status);
 
                     conn.Open();
-
                 }
                 catch (Exception ex)
                 {
