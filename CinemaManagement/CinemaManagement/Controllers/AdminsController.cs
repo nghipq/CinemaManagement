@@ -13,5 +13,35 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult insertFilm()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult insertFilmAction(FormCollection formCollection)
+        {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult insertShedule()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult InsertRoom()
+        {
+            return View();
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CinemaManagement.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,14 @@ namespace CinemaManagement.DAO
 {
     public class SessionDAO
     {
+        public List<Session> listSes = new List<Session>();
+        public MySqlConnection conn { get; set; }
+
+        public SessionDAO()
+        {
+            this.conn = new DBConnection.DBConnection().conn;
+        }
+
         public int createSession(DateTime StartTime, DateTime EndTime)
         {
 
