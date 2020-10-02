@@ -167,7 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\*" />
-    <Compile Include="Controllers\AdminsController.cs" />
+    <Compile Include="Controllers\*" />
     <Compile Include="DAO\*" />
     <Compile Include="DBConnection\DBConnection.cs" />
     <Compile Include="Global.asax.cs">
@@ -195,6 +195,8 @@
     <Content Include="Views\Shared\*" />
     <Content Include="Views\Admins\Index.cshtml" />
     <Content Include="Views\Admins\insertProducer.cshtml" />
+    <Content Include="Views\Admins\insertFilm.cshtml" />
+    <Content Include="Views\Admins\insertShedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
