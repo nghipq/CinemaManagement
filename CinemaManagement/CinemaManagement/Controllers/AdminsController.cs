@@ -15,21 +15,49 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
-
-        // GET: insertProducers
         [HttpGet]
-        public ActionResult insertProducer()
-        
-        [HttpGet]
-        public ActionResult insertFilm()
+        public ActionResult CreateCinema()
         {
             return View();
         }
 
         // Post: insertProducers
         [HttpPost]
-        public ActionResult insertProducer(FormCollection formCollection)
+        public ActionResult CreateCinema(FormCollection formCollection)
         {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key = " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+            CinemaDAO cnDAO = new CinemaDAO();
+            cnDAO.CreateCinema("1", "1", "1", "1", "1");
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult insertFilm()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult insertProducers()
+        {
+            return View();
+        }
+
+
+        // Post: insertProducers
+        [HttpPost]
+        public ActionResult insertProducers(FormCollection formCollection)
+        {
+
+            foreach(string key in formCollection.AllKeys)
+            {
+                Response.Write("Key = " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+
             ProducerDAO pDAO = new ProducerDAO();
 
             string P_Name = formCollection["P_Name"];

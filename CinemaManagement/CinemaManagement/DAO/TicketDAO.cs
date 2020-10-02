@@ -38,5 +38,9 @@ namespace CinemaManagement.DAO
                 return rs;
             }
         }
+        public int getAllTicketByScheduleId()
+        {
+            return -1;
+        }
     }
 }
