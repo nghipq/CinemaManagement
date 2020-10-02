@@ -16,7 +16,7 @@ namespace CinemaManagement
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Demo", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Admins", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
