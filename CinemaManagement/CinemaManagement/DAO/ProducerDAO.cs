@@ -37,7 +37,7 @@ namespace CinemaManagement.DAO
                     command.Parameters.AddWithValue("@PhoneNumber", PhoneNumber);
                     command.Parameters.AddWithValue("@Email", Email);
                     command.Parameters.AddWithValue("@Status", Status);
-                     result = command.ExecuteNonQuery();
+                    result = command.ExecuteNonQuery();
                     
                 }
                 catch (Exception ex)
