@@ -17,13 +17,14 @@ namespace CinemaManagement.DAO
         {
             this.conn = new DBConnection.DBConnection().conn;
         }
-        public int CreateFilm(String F_Name, int id_P, DateTime ReleaseDate, Double Rating, int LimitAge, DateTime AirDate, DateTime EndDate, String Description, int Status)
+        public int CreateFilm(String F_Name, int id_P, DateTime ReleaseDate, Double Rating, int LimitAge, DateTime AirDate, DateTime EndDate, String Description, Boolean Status)
         {
             int result = 0;
             using (conn)
             {
                 try
                 {
+                    conn.Open();
                     string insertData = "insert into Producer(F_Name,id_P,ReleaseDate,Rating,LimitAge,AirDate,EndDate,Description,Status" +
                     "values (@F_Name, @id_P, @ReleaseDate, @Rating, @LimitAge, @AirDate, @EndDate, @Description, @Status)";
                     MySqlCommand command = new MySqlCommand(insertData, conn);
@@ -37,8 +38,7 @@ namespace CinemaManagement.DAO
                     command.Parameters.AddWithValue("@EndDate", EndDate);
                     command.Parameters.AddWithValue("@Description", Description);
                     command.Parameters.AddWithValue("@Status", true);
-
-                    conn.Open();
+                    result = command.ExecuteNonQuery();
 
                 }
                 catch (Exception ex)
