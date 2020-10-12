@@ -48,5 +48,34 @@ namespace CinemaManagement.DAO
             }
             return result;
         }
+
+        public int createPersonInfilm(int id_Per, int id_F, string Description, Boolean Status)
+        {
+            int result = 0;
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    string insertData = "insert into PersonInFilm(id_Per, id_F, Description, Status)" +
+                    "values (@id_Per, @id_F, @Description, @Status)";
+                    MySqlCommand command = new MySqlCommand(insertData, conn);
+
+                    command.Parameters.AddWithValue("@id_Per", id_Per);
+                    command.Parameters.AddWithValue("@id_F", id_F);
+                    command.Parameters.AddWithValue("@Description", Description);
+                    command.Parameters.AddWithValue("@Status", Status);
+                    result = command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to connect to database due to" + ex.ToString());
+                    MessageBox.Show("Failed to insert data due to" + ex.ToString());
+                }
+
+            }
+            return result;
+        }
     }
 }

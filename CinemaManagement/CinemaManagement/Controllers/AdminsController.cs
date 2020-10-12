@@ -81,7 +81,6 @@ namespace CinemaManagement.Controllers
                 Response.Write("Key + " + key + " ");
                 Response.Write(formCollection[key] + "</br>");
             }
-            return View();
         }
 
         [HttpGet]
