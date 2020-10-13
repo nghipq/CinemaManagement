@@ -183,6 +183,8 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\*" />
+    <Content Include="Web\Admin.html" />
+    <Content Include="Web\dashboard.html" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -194,9 +196,11 @@
     <Content Include="Views\*" />
     <Content Include="Views\Shared\*" />
     <Content Include="Views\Admins\Index.cshtml" />
-    <Content Include="Views\Admins\insertProducer.cshtml" />
     <Content Include="Views\Admins\insertFilm.cshtml" />
     <Content Include="Views\Admins\insertShedule.cshtml" />
+    <Content Include="Views\Admins\CreateCinema.cshtml" />
+    <Content Include="Views\Admins\insertProducers.cshtml" />
+    <Content Include="Views\Admins\InsertRoom.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
