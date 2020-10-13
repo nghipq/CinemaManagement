@@ -15,8 +15,6 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         // GET: Admins/insertProducers
         [HttpGet]
@@ -26,10 +24,6 @@ namespace CinemaManagement.Controllers
         }
         
         //GET: Admins/insertFilm
-=======
-=======
-        //Get Admin/InsertCinema/InsertCinemaDAO
->>>>>>> edec25290693819261de470de9f4c53e9c20c012
         [HttpGet]
         public ActionResult InsertCinema()
         {
@@ -39,18 +33,7 @@ namespace CinemaManagement.Controllers
         [HttpPost]
         public ActionResult InsertCinema(FormCollection formCollection)
         {
-            foreach (string key in formCollection.AllKeys)
-            {
-                Response.Write("Key = " + key + " ");
-                Response.Write(formCollection[key] + "</br>");
-            }
 
-<<<<<<< HEAD
->>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
-        [HttpGet]
-        public ActionResult insertFilm()
-        {
-=======
             CinemaDAO cDAO = new CinemaDAO();
             string C_Name = formCollection["C_Name"];       
             string C_Address = formCollection["C_Address"];       
@@ -60,7 +43,6 @@ namespace CinemaManagement.Controllers
 
             cDAO.CreateCinema(C_Name, C_Address, C_Phone, C_Email, Description);
 
->>>>>>> edec25290693819261de470de9f4c53e9c20c012
             return View();
         }
 
@@ -96,12 +78,8 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-<<<<<<< HEAD
         
         //POST: Admins/insertFilm
-=======
-
->>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
         [HttpPost]
         public ActionResult insertFilmAction(FormCollection formCollection)
         {
@@ -119,11 +97,8 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
 
         //GET: Admins/insertRoom
-=======
->>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
         [HttpGet]
         public ActionResult InsertRoom()
         {
@@ -132,11 +107,6 @@ namespace CinemaManagement.Controllers
         [HttpPost]
         public ActionResult insertRoom(FormCollection formCollection)
         {
-            foreach (string key in formCollection.AllKeys)
-            {
-                Response.Write("Key + " + key + " ");
-                Response.Write(formCollection[key] + "</br>");
-            }
             RoomDAO rdao = new RoomDAO();
             int id_C = Convert.ToInt32(formCollection["id_C"]);
             int R_SeatNumber = Convert.ToInt32(formCollection["R_SeatNumber"]);
@@ -147,7 +117,5 @@ namespace CinemaManagement.Controllers
             rdao.CreateRoom(id_C,R_SeatNumber,R_Size,R_Type,0,R_Row,R_Col);//0 la chua hoat dong
             return View();
         }
-
-
     }
 }
