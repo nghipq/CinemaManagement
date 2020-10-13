@@ -26,7 +26,7 @@ namespace CinemaManagement.Controllers
         public ActionResult insertProducers(FormCollection formCollection)
         {
 
-            foreach(string key in formCollection.AllKeys)
+            foreach (string key in formCollection.AllKeys)
             {
                 Response.Write("Key = " + key + " ");
                 Response.Write(formCollection[key] + "</br>");
@@ -47,6 +47,7 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
+<<<<<<< HEAD
         //Get Film
         [HttpGet]
         public ActionResult insertFilm()
@@ -54,6 +55,8 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
+=======
+>>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
         [HttpPost]
         public ActionResult insertFilmAction(FormCollection formCollection)
         {
@@ -85,9 +88,14 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
+<<<<<<< HEAD
 
         [HttpPost]
         public ActionResult insertPerson(FormCollection formCollection)
+=======
+        [HttpGet]
+        public ActionResult InsertRoom()
+>>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
         {
             foreach (string key in formCollection.AllKeys)
             {
@@ -107,6 +115,25 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
+        [HttpPost]
+        public ActionResult insertRoom(FormCollection formCollection)
+        {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+            RoomDAO rdao = new RoomDAO();
+            int id_C = Convert.ToInt32(formCollection["id_C"]);
+            int R_SeatNumber = Convert.ToInt32(formCollection["R_SeatNumber"]);
+            int R_Size = Convert.ToInt32(formCollection["R_Size"]);
+            int R_Type = Convert.ToInt32(formCollection["R_Type"]);
+            int R_Row = Convert.ToInt32(formCollection["R_Row"]);
+            int R_Col = Convert.ToInt32(formCollection["R_Col"]);
+            rdao.CreateRoom(id_C,R_SeatNumber,R_Size,R_Type,0,R_Row,R_Col);//0 la chua hoat dong
+            return View();
+        }
+
 
        
 
