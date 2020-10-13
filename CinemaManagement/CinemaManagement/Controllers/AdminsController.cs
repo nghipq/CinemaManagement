@@ -156,5 +156,33 @@ namespace CinemaManagement.Controllers
             rdao.CreateRoom(id_C,R_SeatNumber,R_Size,R_Type,0,R_Row,R_Col);//0 la chua hoat dong
             return View();
         }
+        [HttpGet]
+        public ActionResult SelectRoomById()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SelectRoomById(FormCollection formCollection)
+        {
+            int id_R = Convert.ToInt32(formCollection["id_R"]);
+            RoomDAO rDAO = new RoomDAO();
+            rDAO.SelectRoomById(id_R);
+            return View();
+        }
+        [HttpGet]
+        public ActionResult GetAllRoomByCinemaId()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult GetAllRoomByCinemaId(FormCollection formCollection)
+        {
+            int id_C = Convert.ToInt32(formCollection["id_C"]);
+            RoomDAO rDAO = new RoomDAO();
+            rDAO.GetAllRoomByCinemaId(id_C);
+            return View();
+        }
     }
 }
