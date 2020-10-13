@@ -130,6 +130,11 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult insertRoom()
+        {
+            return View();
+        }
 
         [HttpPost]
         public ActionResult insertRoom(FormCollection formCollection)
@@ -140,13 +145,34 @@ namespace CinemaManagement.Controllers
                 Response.Write(formCollection[key] + "</br>");
             }
             RoomDAO rdao = new RoomDAO();
-            int id_C = Convert.ToInt32(formCollection["id_C"]);
+            int id_C = Convert.ToInt32(formCollection["Cinema"]);
             int R_SeatNumber = Convert.ToInt32(formCollection["R_SeatNumber"]);
             int R_Size = Convert.ToInt32(formCollection["R_Size"]);
-            int R_Type = Convert.ToInt32(formCollection["R_Type"]);
+            int R_Type = Convert.ToInt32(formCollection["Type"]);
             int R_Row = Convert.ToInt32(formCollection["R_Row"]);
             int R_Col = Convert.ToInt32(formCollection["R_Col"]);
-            rdao.CreateRoom(id_C,R_SeatNumber,R_Size,R_Type,0,R_Row,R_Col);//0 la chua hoat dong
+            rdao.CreateRoom(id_C, R_SeatNumber, R_Size, R_Type, 0, R_Row, R_Col);//0 la chua hoat dong
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Formality()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Formality(FormCollection formCollection)
+        {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+            FormalityDAO fodao = new FormalityDAO();
+            String F_Name = formCollection["F_Name"];
+            String Description = formCollection["Description"];
+            int F_Price = Convert.ToInt32(formCollection["F_Price"]);
+            Boolean Status = Convert.ToBoolean (formCollection["Status"]);
+            fodao.CreateFormality(F_Name,Description,F_Price, Status);//0 la chua hoat dong
             return View();
         }
     }

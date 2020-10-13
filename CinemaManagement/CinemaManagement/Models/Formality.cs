@@ -10,7 +10,7 @@ namespace CinemaManagement.Models
         public int id_F { get; set; }
         public String F_Name { get; set; }
         public String Description { get; set; }
-        public long F_Price { get; set; }
+        public int F_Price { get; set; }
         public Boolean Status { get; set; }
     }
 }
