@@ -196,12 +196,24 @@
     <Content Include="Views\*" />
     <Content Include="Views\Shared\*" />
     <Content Include="Views\Admins\Index.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Admins\insertShedule.cshtml" />
+    <Content Include="Views\Admins\CreateCinema.cshtml" />
+    <Content Include="Views\Admins\insertProducers.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Admins\insertFilm.cshtml" />
+    <Content Include="Views\Admins\insertPerson.cshtml" />
+=======
+    <Content Include="Views\Admins\InsertRoom.cshtml" />
+>>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
+=======
     <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Admins\InsertCinema.cshtml" />
     <Content Include="Views\Admins\insertFilm.cshtml" />
     <Content Include="Views\Admins\insertShedule.cshtml" />
     <Content Include="Views\Admins\InsertRoom.cshtml" />
 
+>>>>>>> edec25290693819261de470de9f4c53e9c20c012
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
