@@ -15,39 +15,44 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
+        //Get Admin/InsertCinema/InsertCinemaDAO
         [HttpGet]
-        public ActionResult CreateCinema()
+<<<<<<< HEAD
+        
+=======
+        public ActionResult InsertCinema()
         {
             return View();
         }
-
-        // Post: insertProducers
+        //POST Admin/InsertCinema/InsertCinemaDAO
         [HttpPost]
-        public ActionResult CreateCinema(FormCollection formCollection)
+        public ActionResult InsertCinema(FormCollection formCollection)
         {
             foreach (string key in formCollection.AllKeys)
             {
                 Response.Write("Key = " + key + " ");
                 Response.Write(formCollection[key] + "</br>");
             }
-            CinemaDAO cnDAO = new CinemaDAO();
-            cnDAO.CreateCinema("1", "1", "1", "1", "1");
+
+            CinemaDAO cDAO = new CinemaDAO();
+            string C_Name = formCollection["C_Name"];       
+            string C_Address = formCollection["C_Address"];       
+            string C_Phone = formCollection["C_Phone"];
+            string C_Email = formCollection["C_Email"];
+            string Description = formCollection["Description"];
+
+            cDAO.CreateCinema(C_Name, C_Address, C_Phone, C_Email, Description);
+
             return View();
         }
 
         [HttpGet]
-        public ActionResult insertFilm()
-        {
-            return View();
-        }
-        [HttpGet]
+>>>>>>> edec25290693819261de470de9f4c53e9c20c012
         public ActionResult insertProducers()
         {
             return View();
         }
 
-
-        // Post: insertProducers
         [HttpPost]
         public ActionResult insertProducers(FormCollection formCollection)
         {
@@ -73,6 +78,16 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
+<<<<<<< HEAD
+        //Get Film
+        [HttpGet]
+        public ActionResult insertFilm()
+        {
+            return View();
+        }
+
+=======
+>>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
         [HttpPost]
         public ActionResult insertFilmAction(FormCollection formCollection)
         {
@@ -81,17 +96,54 @@ namespace CinemaManagement.Controllers
                 Response.Write("Key + " + key + " ");
                 Response.Write(formCollection[key] + "</br>");
             }
+
+            FilmDAO fDAO = new FilmDAO();
+            string F_Name = formCollection["F_Name"];
+            int id_P = Convert.ToInt32(formCollection["id_P"]);
+            DateTime ReleaseDate = Convert.ToDateTime(formCollection["ReleaseDate"]);
+            Double Rating = Convert.ToDouble(formCollection["Rating"]);
+            int LimitAge = Convert.ToInt32(formCollection["LimitAge"]);
+            DateTime AirDate = Convert.ToDateTime(formCollection["AirDate"]);
+            DateTime EndDate = Convert.ToDateTime(formCollection["EndDate"]);
+            String Description = formCollection["Description"];
+
+
+            fDAO.CreateFilm(F_Name, id_P, ReleaseDate, Rating, LimitAge, AirDate, EndDate, Description, true);
+
             return View();
         }
 
+        //GetPerson
         [HttpGet]
-        public ActionResult insertShedule()
+        public ActionResult insertPerson()
         {
             return View();
         }
+<<<<<<< HEAD
+
+        [HttpPost]
+        public ActionResult insertPerson(FormCollection formCollection)
+=======
         [HttpGet]
         public ActionResult InsertRoom()
+>>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
         {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+
+            PersonDAO PerDAO = new PersonDAO();
+            string Per_Name = formCollection["Per_Name"];
+            int id_N = Convert.ToInt32(formCollection["id_N"]);
+            int id_Role = Convert.ToInt32(formCollection["id_Role"]);
+            int Gender = Convert.ToInt32(formCollection["Gender"]);
+            DateTime Birthday = Convert.ToDateTime(formCollection["Birthday"]);
+            String Description = formCollection["Description"];
+
+            PerDAO.CreatePerson(Per_Name, id_N, id_Role, Gender, Birthday, Description, true);
+
             return View();
         }
         [HttpPost]
@@ -113,6 +165,8 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
+
+       
 
     }
 }
