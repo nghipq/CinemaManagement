@@ -1,10 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Common;
 using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Windows;
 
 namespace CinemaManagement.DAO
 {
@@ -58,6 +60,78 @@ namespace CinemaManagement.DAO
             }
 
 
+        }
+
+        public int SelectRoomById(int id_R)
+        {
+            int result = 0;
+            using (conn)
+            {
+                
+                try
+                {
+                    conn.Open();
+                    String query = "SELECT * FROM `ROOM` WHERE id_R=@id_R";
+                    MySqlCommand command = new MySqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@id_R", id_R);
+                    result = command.ExecuteNonQuery();
+                    MySqlDataReader rdr = command.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        //int id_R = rdr.GetInt32(0);
+                        int id_C = rdr.GetInt32(0);
+                        int R_SeatNumber = rdr.GetInt32(1);
+                        int R_Row = rdr.GetInt32(2);
+                        int R_Col = rdr.GetInt32(3);
+                        int R_Size = rdr.GetInt32(4);
+                        int R_Type = rdr.GetInt32(5);
+                        int Status = rdr.GetInt32(6);
+                    }
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Failed connect database" + ex.ToString());
+                }
+                conn.Close();
+            }
+            return result;
+        }
+
+        public int GetAllRoomByCinemaId(int id_C)
+        {
+            int result = 0;
+            using (conn)
+            {
+
+                try
+                {
+                    conn.Open();
+                    String query = "SELECT * FROM `ROOM` WHERE id_C=@id_C";
+                    MySqlCommand command = new MySqlCommand(query, conn);
+                    command.Parameters.AddWithValue("@id_C", id_C);
+                    result = command.ExecuteNonQuery();
+                    MySqlDataReader rdr = command.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        //int id_R = rdr.GetInt32(0);
+                        int id_R = rdr.GetInt32(0);
+                        int R_SeatNumber = rdr.GetInt32(1);
+                        int R_Row = rdr.GetInt32(2);
+                        int R_Col = rdr.GetInt32(3);
+                        int R_Size = rdr.GetInt32(4);
+                        int R_Type = rdr.GetInt32(5);
+                        int Status = rdr.GetInt32(6);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed connect database" + ex.ToString());
+                }
+                conn.Close();
+            }
+            return result;
         }
     }
 }

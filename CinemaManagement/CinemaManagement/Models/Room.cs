@@ -15,5 +15,6 @@ namespace CinemaManagement.Models
         public int R_Size { get; set; }
         public int R_Type { get; set; }
         public int Status { get; set; }
+
     }
 }

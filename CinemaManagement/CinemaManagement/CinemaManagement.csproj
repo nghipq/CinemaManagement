@@ -209,6 +209,7 @@
     <Content Include="Views\Admins\InsertRoom.cshtml" />
     <Content Include="Views\Admins\Formality.cshtml" />
     <Content Include="Views\Admins\insertFilm.cshtml" />
+    <Content Include="Views\Admins\SelectRoomById.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
