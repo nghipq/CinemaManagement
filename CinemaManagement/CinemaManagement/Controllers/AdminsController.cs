@@ -16,17 +16,21 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
-        // GET: insertProducers
+        // GET: Admins/insertProducers
         [HttpGet]
         public ActionResult insertProducer()
+        {
+            return View();
+        }
         
+        //GET: Admins/insertFilm
         [HttpGet]
         public ActionResult insertFilm()
         {
             return View();
         }
 
-        // Post: insertProducers
+        // Post: Admins/insertProducers
         [HttpPost]
         public ActionResult insertProducer(FormCollection formCollection)
         {
@@ -45,6 +49,7 @@ namespace CinemaManagement.Controllers
             return View();
         }
         
+        //POST: Admins/insertFilm
         [HttpPost]
         public ActionResult insertFilmAction(FormCollection formCollection)
         {
@@ -55,13 +60,15 @@ namespace CinemaManagement.Controllers
             }
             return View();
         }
-
+        
+        //GET: Admins/insertSchedule
         [HttpGet]
         public ActionResult insertShedule()
         {
             return View();
         }
 
+        //GET: Admins/insertRoom
         [HttpGet]
         public ActionResult InsertRoom()
         {
