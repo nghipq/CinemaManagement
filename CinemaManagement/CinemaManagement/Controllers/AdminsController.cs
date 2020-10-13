@@ -55,7 +55,7 @@ namespace CinemaManagement.Controllers
         public ActionResult insertProducers(FormCollection formCollection)
         {
 
-            foreach(string key in formCollection.AllKeys)
+            foreach (string key in formCollection.AllKeys)
             {
                 Response.Write("Key = " + key + " ");
                 Response.Write(formCollection[key] + "</br>");
@@ -75,7 +75,47 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-        
-     
+
+        [HttpPost]
+        public ActionResult insertFilmAction(FormCollection formCollection)
+        {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult insertShedule()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult InsertRoom()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult insertRoom(FormCollection formCollection)
+        {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+            RoomDAO rdao = new RoomDAO();
+            int id_C = Convert.ToInt32(formCollection["id_C"]);
+            int R_SeatNumber = Convert.ToInt32(formCollection["R_SeatNumber"]);
+            int R_Size = Convert.ToInt32(formCollection["R_Size"]);
+            int R_Type = Convert.ToInt32(formCollection["R_Type"]);
+            int R_Row = Convert.ToInt32(formCollection["R_Row"]);
+            int R_Col = Convert.ToInt32(formCollection["R_Col"]);
+            rdao.CreateRoom(id_C,R_SeatNumber,R_Size,R_Type,0,R_Row,R_Col);//0 la chua hoat dong
+            return View();
+        }
+
+
     }
 }
