@@ -72,7 +72,7 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-        
+        /**
         [HttpPost]
         public ActionResult insertFilmAction(FormCollection formCollection)
         {
@@ -81,7 +81,7 @@ namespace CinemaManagement.Controllers
                 Response.Write("Key + " + key + " ");
                 Response.Write(formCollection[key] + "</br>");
             }
-        }
+        }*/
 
         [HttpGet]
         public ActionResult insertShedule()
@@ -92,6 +92,47 @@ namespace CinemaManagement.Controllers
         [HttpGet]
         public ActionResult InsertRoom()
         {
+            return View();
+        }
+
+        //get all bill
+        [HttpGet]
+        public ActionResult getAllBill()
+        {
+            return View();
+        }
+
+
+        // Post: all bill
+        [HttpPost]
+        public ActionResult getAllBill(FormCollection formCollection)
+        {
+
+            BillDAO bDAO = new BillDAO();
+
+
+            bDAO.getAllBill();
+            
+
+            return View();
+        }
+
+        //get all film
+        [HttpGet]
+        public ActionResult getAllFilm()
+        {
+            return View();
+        }
+
+
+        // Post: all bill
+        [HttpPost]
+        public ActionResult getAllFilm(FormCollection formCollection)
+        {
+
+            
+
+
             return View();
         }
 

@@ -39,7 +39,7 @@ namespace CinemaManagement.DAO
                         id_Staff = Convert.ToInt32(dr["id_Staff"]),
                         DateBuy = Convert.ToDateTime(dr["DateBuy"]),
                         Total = Convert.ToInt32(dr["Total"]),
-                        Status = Convert.ToBoolean(dr["status"])
+                        Status = Convert.ToBoolean(true)
                     });
                 }
 
