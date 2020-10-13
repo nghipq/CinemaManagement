@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net.Http;
 using CinemaManagement.DAO;
+using System.ComponentModel.Design;
 
 namespace CinemaManagement.Controllers
 {
@@ -17,9 +18,6 @@ namespace CinemaManagement.Controllers
         }
         //Get Admin/InsertCinema/InsertCinemaDAO
         [HttpGet]
-<<<<<<< HEAD
-        
-=======
         public ActionResult InsertCinema()
         {
             return View();
@@ -46,8 +44,8 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
+        //Insert Producer
         [HttpGet]
->>>>>>> edec25290693819261de470de9f4c53e9c20c012
         public ActionResult insertProducers()
         {
             return View();
@@ -78,16 +76,13 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
-<<<<<<< HEAD
-        //Get Film
+        //insert Film
         [HttpGet]
         public ActionResult insertFilm()
         {
             return View();
         }
 
-=======
->>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
         [HttpPost]
         public ActionResult insertFilmAction(FormCollection formCollection)
         {
@@ -119,14 +114,10 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
+
 
         [HttpPost]
         public ActionResult insertPerson(FormCollection formCollection)
-=======
-        [HttpGet]
-        public ActionResult InsertRoom()
->>>>>>> d532f2390c7a826bc0bac4eced7568769a64782e
         {
             foreach (string key in formCollection.AllKeys)
             {
@@ -144,6 +135,11 @@ namespace CinemaManagement.Controllers
 
             PerDAO.CreatePerson(Per_Name, id_N, id_Role, Gender, Birthday, Description, true);
 
+            return View();
+        }
+        [HttpGet]
+        public ActionResult InsertRoom()
+        {
             return View();
         }
         [HttpPost]
