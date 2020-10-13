@@ -52,8 +52,11 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
+<<<<<<< HEAD
 
         // Post: Admins/insertProducers
+=======
+>>>>>>> 343a0acfbce2166e940d71df208c506761498196
         [HttpPost]
         public ActionResult insertProducers(FormCollection formCollection)
         {
@@ -78,8 +81,19 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
+<<<<<<< HEAD
         
         //POST: Admins/insertFilm
+=======
+
+        //Get Film
+        [HttpGet]
+        public ActionResult insertFilm()
+        {
+            return View();
+        }
+
+>>>>>>> 343a0acfbce2166e940d71df208c506761498196
         [HttpPost]
         public ActionResult insertFilmAction(FormCollection formCollection)
         {
@@ -88,20 +102,59 @@ namespace CinemaManagement.Controllers
                 Response.Write("Key + " + key + " ");
                 Response.Write(formCollection[key] + "</br>");
             }
+
+            FilmDAO fDAO = new FilmDAO();
+            string F_Name = formCollection["F_Name"];
+            int id_P = Convert.ToInt32(formCollection["id_P"]);
+            DateTime ReleaseDate = Convert.ToDateTime(formCollection["ReleaseDate"]);
+            Double Rating = Convert.ToDouble(formCollection["Rating"]);
+            int LimitAge = Convert.ToInt32(formCollection["LimitAge"]);
+            DateTime AirDate = Convert.ToDateTime(formCollection["AirDate"]);
+            DateTime EndDate = Convert.ToDateTime(formCollection["EndDate"]);
+            String Description = formCollection["Description"];
+
+
+            fDAO.CreateFilm(F_Name, id_P, ReleaseDate, Rating, LimitAge, AirDate, EndDate, Description, true);
+
             return View();
         }
+<<<<<<< HEAD
         
         //GET: Admins/insertSchedule
+=======
+
+        //GetPerson
+>>>>>>> 343a0acfbce2166e940d71df208c506761498196
         [HttpGet]
-        public ActionResult insertShedule()
+        public ActionResult insertPerson()
         {
             return View();
         }
+<<<<<<< HEAD
 
         //GET: Admins/insertRoom
+=======
+        
+>>>>>>> 343a0acfbce2166e940d71df208c506761498196
         [HttpGet]
         public ActionResult InsertRoom()
         {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+
+            PersonDAO PerDAO = new PersonDAO();
+            string Per_Name = formCollection["Per_Name"];
+            int id_N = Convert.ToInt32(formCollection["id_N"]);
+            int id_Role = Convert.ToInt32(formCollection["id_Role"]);
+            int Gender = Convert.ToInt32(formCollection["Gender"]);
+            DateTime Birthday = Convert.ToDateTime(formCollection["Birthday"]);
+            String Description = formCollection["Description"];
+
+            PerDAO.CreatePerson(Per_Name, id_N, id_Role, Gender, Birthday, Description, true);
+
             return View();
         }
         [HttpPost]
