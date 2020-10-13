@@ -1,0 +1,67 @@
+﻿@model IEnumerable<CinemaManagement.Models.Bill>
+
+@{
+    ViewBag.Title = "Bill List";
+}
+
+<h2>Bill List</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            ID Bill
+        </th>
+        <th>
+            ID Customer
+        </th>
+        <th>
+            ID Staff
+        </th>
+        <th>
+            Date Buy
+        </th>
+        <th>
+            Total
+        </th>
+        <th>
+            Status
+        </th>
+        <th></th>
+    </tr>
+    
+    @{ 
+        List<CinemaManagement.Models.Bill> bill = new List<CinemaManagement.Models.Bill>();
+    }
+
+
+    @foreach (var item in bill)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_B)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_Cus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id_Staff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateBuy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+
+</table>

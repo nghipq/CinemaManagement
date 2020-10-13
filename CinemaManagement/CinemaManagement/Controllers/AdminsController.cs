@@ -77,7 +77,8 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-        //insert Film
+
+        //Insert Film
         [HttpGet]
         public ActionResult insertFilm()
         {
@@ -85,7 +86,7 @@ namespace CinemaManagement.Controllers
         }
 
         [HttpPost]
-        public ActionResult insertFilmAction(FormCollection formCollection)
+        public ActionResult insertFilm(FormCollection formCollection)
         {
             foreach (string key in formCollection.AllKeys)
             {
@@ -93,9 +94,10 @@ namespace CinemaManagement.Controllers
                 Response.Write(formCollection[key] + "</br>");
             }
 
+
             FilmDAO fDAO = new FilmDAO();
             string F_Name = formCollection["F_Name"];
-            int id_P = Convert.ToInt32(formCollection["id_P"]);
+            int id_P = Convert.ToInt32(formCollection["Producers"]);
             DateTime ReleaseDate = Convert.ToDateTime(formCollection["ReleaseDate"]);
             Double Rating = Convert.ToDouble(formCollection["Rating"]);
             int LimitAge = Convert.ToInt32(formCollection["LimitAge"]);
@@ -103,11 +105,11 @@ namespace CinemaManagement.Controllers
             DateTime EndDate = Convert.ToDateTime(formCollection["EndDate"]);
             String Description = formCollection["Description"];
 
-
             fDAO.CreateFilm(F_Name, id_P, ReleaseDate, Rating, LimitAge, AirDate, EndDate, Description, true);
 
             return View();
         }
+
 
         //GetPerson
         [HttpGet]
@@ -138,6 +140,49 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
+
+        //get all bill
+        [HttpGet]
+        public ActionResult getAllBill()
+        {
+            return View();
+        }
+
+
+        // Post: all bill
+        [HttpPost]
+        public ActionResult getAllBill(FormCollection formCollection)
+        {
+
+            BillDAO bDAO = new BillDAO();
+
+
+            bDAO.getAllBill();
+            
+
+            return View();
+        }
+
+        //get all film
+        [HttpGet]
+        public ActionResult getAllFilm()
+        {
+            return View();
+        }
+
+
+        // Post: all bill
+        [HttpPost]
+        public ActionResult getAllFilm(FormCollection formCollection)
+        {
+
+            
+
+
+            return View();
+        }
+
+
         [HttpPost]
         public ActionResult insertRoom(FormCollection formCollection)
         {
@@ -156,6 +201,7 @@ namespace CinemaManagement.Controllers
             rdao.CreateRoom(id_C,R_SeatNumber,R_Size,R_Type,0,R_Row,R_Col);//0 la chua hoat dong
             return View();
         }
+        
         [HttpGet]
         public ActionResult SelectRoomById()
         {

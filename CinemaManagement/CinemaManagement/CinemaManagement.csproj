@@ -199,15 +199,16 @@
     <Content Include="Views\Admins\insertShedule.cshtml" />
     <Content Include="Views\Admins\CreateCinema.cshtml" />
     <Content Include="Views\Admins\insertProducers.cshtml" />
-    <Content Include="Views\Admins\insertFilm.cshtml" />
+    <Content Include="Views\Admins\getAllBill.cshtml" />
+    <Content Include="Views\Admins\getAllFilm.cshtml" />
     <Content Include="Views\Admins\insertPerson.cshtml" />
     <Content Include="Views\Admins\InsertRoom.cshtml" />
     <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Admins\InsertCinema.cshtml" />
-    <Content Include="Views\Admins\insertFilm.cshtml" />
     <Content Include="Views\Admins\insertShedule.cshtml" />
     <Content Include="Views\Admins\InsertRoom.cshtml" />
     <Content Include="Views\Admins\Formality.cshtml" />
+    <Content Include="Views\Admins\insertFilm.cshtml" />
     <Content Include="Views\Admins\SelectRoomById.cshtml" />
   </ItemGroup>
   <ItemGroup>
