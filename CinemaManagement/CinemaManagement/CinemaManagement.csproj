@@ -201,6 +201,7 @@
     <Content Include="Views\Admins\CreateCinema.cshtml" />
     <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Admins\InsertRoom.cshtml" />
+    <Content Include="Views\Admins\Formality.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
