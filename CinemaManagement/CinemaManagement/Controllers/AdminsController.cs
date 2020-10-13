@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net.Http;
 using CinemaManagement.DAO;
+using System.ComponentModel.Design;
 
 namespace CinemaManagement.Controllers
 {
@@ -44,7 +45,8 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-        
+
+        //Insert Producer
         [HttpGet]
         public ActionResult insertProducers()
         {
@@ -75,8 +77,7 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-
-        //Get Film
+        //insert Film
         [HttpGet]
         public ActionResult insertFilm()
         {
@@ -128,6 +129,12 @@ namespace CinemaManagement.Controllers
 
             PerDAO.CreatePerson(Per_Name, id_N, id_Role, Gender, Birthday, Description, true);
 
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult InsertRoom()
+        {
             return View();
         }
 
