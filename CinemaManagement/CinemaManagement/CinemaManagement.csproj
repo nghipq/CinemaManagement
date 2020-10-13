@@ -196,11 +196,12 @@
     <Content Include="Views\*" />
     <Content Include="Views\Shared\*" />
     <Content Include="Views\Admins\Index.cshtml" />
+    <Content Include="Views\Admins\insertProducers.cshtml" />
+    <Content Include="Views\Admins\InsertCinema.cshtml" />
     <Content Include="Views\Admins\insertFilm.cshtml" />
     <Content Include="Views\Admins\insertShedule.cshtml" />
-    <Content Include="Views\Admins\CreateCinema.cshtml" />
-    <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Admins\InsertRoom.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
