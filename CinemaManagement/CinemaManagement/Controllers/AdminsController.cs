@@ -52,11 +52,7 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
-<<<<<<< HEAD
-
         // Post: Admins/insertProducers
-=======
->>>>>>> 343a0acfbce2166e940d71df208c506761498196
         [HttpPost]
         public ActionResult insertProducers(FormCollection formCollection)
         {
@@ -81,11 +77,8 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-<<<<<<< HEAD
         
         //POST: Admins/insertFilm
-=======
-
         //Get Film
         [HttpGet]
         public ActionResult insertFilm()
@@ -93,7 +86,6 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
->>>>>>> 343a0acfbce2166e940d71df208c506761498196
         [HttpPost]
         public ActionResult insertFilmAction(FormCollection formCollection)
         {
@@ -118,24 +110,16 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-<<<<<<< HEAD
         
         //GET: Admins/insertSchedule
-=======
-
         //GetPerson
->>>>>>> 343a0acfbce2166e940d71df208c506761498196
         [HttpGet]
         public ActionResult insertPerson()
         {
             return View();
         }
-<<<<<<< HEAD
 
         //GET: Admins/insertRoom
-=======
-        
->>>>>>> 343a0acfbce2166e940d71df208c506761498196
         [HttpGet]
         public ActionResult InsertRoom()
         {
