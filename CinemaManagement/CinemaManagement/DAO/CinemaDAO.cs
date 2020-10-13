@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CinemaManagement.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,11 +22,10 @@ namespace CinemaManagement.DAO
             {
                 try
                 {
+                    conn.Open();
                     string insertData = "insert into Cinema(C_Name,C_Address,C_Phone,C_Email,Description,Status)" +
                                          "values (@C_Name, @C_Address, @C_Phone, @C_Email, @Description,@Status)";
                     MySqlCommand command = new MySqlCommand(insertData, conn);
-
-
                     command.Parameters.AddWithValue("@C_Name", C_Name);
                     command.Parameters.AddWithValue("@C_Address", C_Address);
                     command.Parameters.AddWithValue("@C_Phone", C_Phone);
@@ -33,12 +33,7 @@ namespace CinemaManagement.DAO
                     command.Parameters.AddWithValue("@Description", Description);
                     command.Parameters.AddWithValue("@Status", true);
                     result = command.ExecuteNonQuery();
-                    conn.Open();
-                    if (result < 0)
-                    {
-                        return -1;
-                    }
-
+                    
                 }
                 catch (Exception ex)
                 {
@@ -48,6 +43,41 @@ namespace CinemaManagement.DAO
 
             }
             return result;
+        }
+
+        public List<Cinema> getAllCinema()
+        {
+            List<Cinema> list = new List<Cinema>();
+
+            using (conn)
+            {
+                string sql = "select * from Cinema";
+                MySqlCommand com = new MySqlCommand(sql);
+                com.Connection = conn;
+
+                conn.Open();
+
+                MySqlDataReader dr = com.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    list.Add(new Cinema
+                    {
+                        id_C = Convert.ToInt32(dr["Id_C"]),
+                        C_Name = dr["C_Name"].ToString(),
+                        C_Address = dr["C_Address"].ToString(),
+                        C_Email = dr["C_Email"].ToString(),
+                        C_Phone = dr["C_Phone"].ToString(),
+                        Description = dr["Description"].ToString(),
+                        Status = Convert.ToBoolean(dr["Status"]),
+                    }) ; 
+                }
+
+                //đóng db sau khi dùng xong nhe
+                conn.Close();
+            }
+
+            return list;
         }
     }
 }

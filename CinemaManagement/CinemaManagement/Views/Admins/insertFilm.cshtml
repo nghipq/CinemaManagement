@@ -1,10 +1,10 @@
 ﻿@model CinemaManagement.Models.Films
 
 @{
-    ViewBag.Title = "insertFilm";
+    ViewBag.Title = "New Film";
 }
 
-<h2>insertFilm</h2>
+<h2>Add new film</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,20 +12,14 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Films</h4>
+ 
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.id_F, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.id_F, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.id_F, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
+        
         <div class="form-group">
             @Html.LabelFor(model => model.F_Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                
                 @Html.EditorFor(model => model.F_Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.F_Name, "", new { @class = "text-danger" })
             </div>
@@ -34,8 +28,21 @@
         <div class="form-group">
             @Html.LabelFor(model => model.id_P, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.id_P, new { htmlAttributes = new { @class = "form-control" } })
+                @{
+                    List<CinemaManagement.Models.Producers> producer = new CinemaManagement.DAO.ProducerDAO().getAllProducer();
+                    List<SelectListItem> pSelectionList = new List<SelectListItem>();
+                    producer.ForEach(item =>
+                    {
+                        pSelectionList.Add(new SelectListItem
+                        {
+                            Text = item.P_Name,
+                            Value = Convert.ToString(item.id_P),
+                        });
+                    });
+                }
+                @Html.DropDownList("Producers", pSelectionList)
                 @Html.ValidationMessageFor(model => model.id_P, "", new { @class = "text-danger" })
+
             </div>
         </div>
 
@@ -88,14 +95,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
@@ -104,7 +103,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "getAllFilm")
 </div>
 
 @section Scripts {
