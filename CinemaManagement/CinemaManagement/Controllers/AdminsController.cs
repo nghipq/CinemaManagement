@@ -15,12 +15,14 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
+        
         //Get Admin/InsertCinema/InsertCinemaDAO
         [HttpGet]
         public ActionResult InsertCinema()
         {
             return View();
         }
+
         //POST Admin/InsertCinema/InsertCinemaDAO
         [HttpPost]
         public ActionResult InsertCinema(FormCollection formCollection)
@@ -42,7 +44,7 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-
+        
         [HttpGet]
         public ActionResult insertProducers()
         {
@@ -112,15 +114,9 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
-        
-        [HttpGet]
-        public ActionResult InsertRoom()
-        {
-            foreach (string key in formCollection.AllKeys)
-            {
-                Response.Write("Key + " + key + " ");
-                Response.Write(formCollection[key] + "</br>");
-            }
+
+        [HttpPost]
+        public ActionResult insertPerson(FormCollection formCollection) {
 
             PersonDAO PerDAO = new PersonDAO();
             string Per_Name = formCollection["Per_Name"];
@@ -134,6 +130,7 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
+
         [HttpPost]
         public ActionResult insertRoom(FormCollection formCollection)
         {
