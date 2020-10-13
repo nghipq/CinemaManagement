@@ -22,11 +22,10 @@ namespace CinemaManagement.DAO
             {
                 try
                 {
+                    conn.Open();
                     string insertData = "insert into Cinema(C_Name,C_Address,C_Phone,C_Email,Description,Status)" +
                                          "values (@C_Name, @C_Address, @C_Phone, @C_Email, @Description,@Status)";
                     MySqlCommand command = new MySqlCommand(insertData, conn);
-
-
                     command.Parameters.AddWithValue("@C_Name", C_Name);
                     command.Parameters.AddWithValue("@C_Address", C_Address);
                     command.Parameters.AddWithValue("@C_Phone", C_Phone);
@@ -34,12 +33,7 @@ namespace CinemaManagement.DAO
                     command.Parameters.AddWithValue("@Description", Description);
                     command.Parameters.AddWithValue("@Status", true);
                     result = command.ExecuteNonQuery();
-                    conn.Open();
-                    if (result < 0)
-                    {
-                        return -1;
-                    }
-
+                    
                 }
                 catch (Exception ex)
                 {
