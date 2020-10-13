@@ -44,7 +44,8 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-
+        
+        [HttpGet]
         public ActionResult insertProducers()
         {
             return View();
