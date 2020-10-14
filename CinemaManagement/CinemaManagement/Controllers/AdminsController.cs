@@ -255,5 +255,11 @@ namespace CinemaManagement.Controllers
             rDAO.GetAllRoomByCinemaId(id_C);
             return View();
         }
+
+        [HttpGet]
+        public ActionResult insertSchedule()
+        {
+            return View();
+        }
     }
 }
