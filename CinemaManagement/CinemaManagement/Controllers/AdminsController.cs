@@ -16,8 +16,15 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
+
+        // GET: Admins/insertProducers
+        [HttpGet]
+        public ActionResult insertProducer()
+        {
+            return View();
+        }
         
-        //Get Admin/InsertCinema/InsertCinemaDAO
+        //GET: Admins/insertFilm
         [HttpGet]
         public ActionResult InsertCinema()
         {
@@ -28,11 +35,6 @@ namespace CinemaManagement.Controllers
         [HttpPost]
         public ActionResult InsertCinema(FormCollection formCollection)
         {
-            foreach (string key in formCollection.AllKeys)
-            {
-                Response.Write("Key = " + key + " ");
-                Response.Write(formCollection[key] + "</br>");
-            }
 
             CinemaDAO cDAO = new CinemaDAO();
             string C_Name = formCollection["C_Name"];       
@@ -53,6 +55,7 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
+        // Post: Admins/insertProducers
         [HttpPost]
         public ActionResult insertProducers(FormCollection formCollection)
         {
@@ -77,8 +80,9 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-
-        //Insert Film
+        
+        //POST: Admins/insertFilm
+        //Get Film
         [HttpGet]
         public ActionResult insertFilm()
         {
@@ -109,8 +113,8 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-
-
+        
+        //GET: Admins/insertSchedule
         //GetPerson
         [HttpGet]
         public ActionResult insertPerson()
@@ -191,11 +195,6 @@ namespace CinemaManagement.Controllers
         [HttpPost]
         public ActionResult insertRoom(FormCollection formCollection)
         {
-            foreach (string key in formCollection.AllKeys)
-            {
-                Response.Write("Key + " + key + " ");
-                Response.Write(formCollection[key] + "</br>");
-            }
             RoomDAO rdao = new RoomDAO();
             int id_C = Convert.ToInt32(formCollection["Cinema"]);
             int R_SeatNumber = Convert.ToInt32(formCollection["R_SeatNumber"]);
@@ -254,6 +253,12 @@ namespace CinemaManagement.Controllers
             int id_C = Convert.ToInt32(formCollection["id_C"]);
             RoomDAO rDAO = new RoomDAO();
             rDAO.GetAllRoomByCinemaId(id_C);
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult insertSchedule()
+        {
             return View();
         }
     }
