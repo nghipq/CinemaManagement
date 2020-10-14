@@ -162,7 +162,10 @@ namespace CinemaManagement.Controllers
         [HttpGet]
         public ActionResult updateFilm()
         {
-            return View();
+            int id_F = Convert.ToInt32(this.Request.QueryString["id_F"]);
+            Films film = new FilmDAO().getFilmById(id_F);
+
+            return View(film);
         }
 
         //post update film
@@ -175,6 +178,7 @@ namespace CinemaManagement.Controllers
                 Response.Write(formCollection[key] + "</br>");
             }
             FilmDAO fDAO = new FilmDAO();
+            int id_F = Convert.ToInt32(formCollection["id_F"]);
             string F_Name = formCollection["F_Name"];
             int id_P = Convert.ToInt32(formCollection["Producers"]);
             DateTime ReleaseDate = Convert.ToDateTime(formCollection["ReleaseDate"]);
@@ -183,9 +187,10 @@ namespace CinemaManagement.Controllers
             DateTime AirDate = Convert.ToDateTime(formCollection["AirDate"]);
             DateTime EndDate = Convert.ToDateTime(formCollection["EndDate"]);
             String Description = formCollection["Description"];
+            int Status = Convert.ToInt32(formCollection["Status"]);
             
 
-            fDAO.updateFilm(F_Name, id_P, ReleaseDate, Rating, LimitAge, AirDate, EndDate, Description, true);
+            fDAO.updateFilm(id_F, F_Name, id_P, ReleaseDate, Rating, LimitAge, AirDate, EndDate, Description, Status);
 
             return View();
         }
@@ -208,6 +213,34 @@ namespace CinemaManagement.Controllers
             rdao.CreateRoom(id_C,R_SeatNumber,R_Size,R_Type,0,R_Row,R_Col);//0 la chua hoat dong
             return View();
         }
+        
+        [HttpGet]
+        public ActionResult SelectRoomById()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult SelectRoomById(FormCollection formCollection)
+        {
+            int id_R = Convert.ToInt32(formCollection["id_R"]);
+            RoomDAO rDAO = new RoomDAO();
+            rDAO.SelectRoomById(id_R);
+            return View();
+        }
+        [HttpGet]
+        public ActionResult GetAllRoomByCinemaId()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult GetAllRoomByCinemaId(FormCollection formCollection)
+        {
+            int id_C = Convert.ToInt32(formCollection["id_C"]);
+            RoomDAO rDAO = new RoomDAO();
+            rDAO.GetAllRoomByCinemaId(id_C);
+            return View();
+        }
     }
 }

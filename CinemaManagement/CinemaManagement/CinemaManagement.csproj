@@ -210,6 +210,7 @@
     <Content Include="Views\Admins\insertFilm.cshtml" />
     <Content Include="Views\Admins\getAllBill.cshtml" />
     <Content Include="Views\Admins\updateFilm.cshtml" />
+    <Content Include="Views\Admins\SelectRoomById.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
