@@ -9,6 +9,9 @@ namespace CinemaManagement.Models
     {
         public int id_Sche { get; set; }
         public int id_Ses { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime EndTime { get; set; }
+        public DateTime Sche_Date { get; set; }
         public int id_F { get; set; }
         public int Status { get; set; }
     }
