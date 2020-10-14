@@ -14,18 +14,19 @@ namespace CinemaManagement.DAO
             this.conn = new DBConnection.DBConnection().conn;
         }
 
-        public int createSchedule(int id_Ses, int id_F)
+        public int createSchedule(int id_Ses, DateTime Sche_Date,int id_F)
         {
             //kết nối database
             using (this.conn)
             {
                 //lệnh select all trong sql
-                string query = "insert into schedule(id_Ses, id_F, status) values(@id_Ses, @id_F, @status)";
+                string query = "insert into schedule(id_Ses, Sche_Date, id_F, status) values(@id_Ses, @Sche_Date @id_F, @status)";
 
                 //chuyển lệnh sql sang định dạng của thư viện MySQL
                 MySqlCommand comm = new MySqlCommand(query);
                 comm.Connection = conn;
                 comm.Parameters.AddWithValue("@id_Ses", id_Ses);
+                comm.Parameters.AddWithValue("@Sche_Date", Sche_Date);
                 comm.Parameters.AddWithValue("@id_F", id_F);
                 comm.Parameters.AddWithValue("@status", true);
 
@@ -34,6 +35,7 @@ namespace CinemaManagement.DAO
 
                 int rs = comm.ExecuteNonQuery();
 
+                conn.Close();
                 return rs;
             }
         }

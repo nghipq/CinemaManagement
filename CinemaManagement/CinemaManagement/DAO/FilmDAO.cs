@@ -25,7 +25,7 @@ namespace CinemaManagement.DAO
                 try
                 {
                     conn.Open();
-                    string insertData = "insert into Producer(F_Name,id_P,ReleaseDate,Rating,LimitAge,AirDate,EndDate,Description,Status" +
+                    string insertData = "insert into Films(F_Name,id_P,ReleaseDate,Rating,LimitAge,AirDate,EndDate,Description,Status)" +
                     "values (@F_Name, @id_P, @ReleaseDate, @Rating, @LimitAge, @AirDate, @EndDate, @Description, @Status)";
                     MySqlCommand command = new MySqlCommand(insertData, conn);
 
@@ -49,6 +49,44 @@ namespace CinemaManagement.DAO
 
             }
             return result;
+        }
+
+        public List<Films> getAllFilm()
+        {
+            List<Films> list = new List<Films>();
+
+            using (conn)
+            {
+                string sql = "select * from Films";
+                MySqlCommand com = new MySqlCommand(sql);
+                com.Connection = conn;
+
+                conn.Open();
+
+                MySqlDataReader dr = com.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    list.Add(new Films
+                    {
+                        id_F = Convert.ToInt32(dr["id_F"]),
+                        F_Name = dr["F_Name"].ToString(),
+                        id_P = Convert.ToInt32(dr["id_P"]),
+                        ReleaseDate = Convert.ToDateTime(dr["ReleaseDate"]),
+                        Description = dr["Description"].ToString(),
+                        Rating = Convert.ToDouble(dr["Rating"]),
+                        LimitAge = Convert.ToInt32(dr["LimitAge"]),
+                        AirDate = Convert.ToDateTime(dr["AirDate"]),
+                        EndDate = Convert.ToDateTime(dr["EndDate"]),
+                        Status = Convert.ToInt32(dr["status"])
+                    });
+                }
+
+                //đóng db sau khi dùng xong nhe
+                conn.Close();
+            }
+
+            return list;
         }
     }
 }
