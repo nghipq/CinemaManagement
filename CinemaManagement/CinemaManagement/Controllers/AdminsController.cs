@@ -157,5 +157,11 @@ namespace CinemaManagement.Controllers
             rdao.CreateRoom(id_C,R_SeatNumber,R_Size,R_Type,0,R_Row,R_Col);//0 la chua hoat dong
             return View();
         }
+
+        [HttpGet]
+        public ActionResult insertSchedule()
+        {
+            return View();
+        }
     }
 }

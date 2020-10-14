@@ -93,7 +93,6 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
-    
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -197,17 +196,13 @@
     <Content Include="Views\*" />
     <Content Include="Views\Shared\*" />
     <Content Include="Views\Admins\Index.cshtml" />
-    <Content Include="Views\Admins\insertShedule.cshtml" />
     <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Admins\insertFilm.cshtml" />
     <Content Include="Views\Admins\insertPerson.cshtml" />
     <Content Include="Views\Admins\InsertRoom.cshtml" />
-    <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Admins\InsertCinema.cshtml" />
-    <Content Include="Views\Admins\insertShedule.cshtml" />
-    <Content Include="Views\Admins\InsertRoom.cshtml" />
     <Content Include="Views\Admins\Formality.cshtml" />
-
+    <Content Include="Views\Admins\insertSchedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
