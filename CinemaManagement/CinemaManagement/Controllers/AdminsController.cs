@@ -7,8 +7,8 @@ using System.Net.Http;
 using CinemaManagement.DAO;
 using CinemaManagement.Models;
 using System.ComponentModel.Design;
+using CinemaManagement.Models;
 using MySql.Data.MySqlClient;
-
 
 namespace CinemaManagement.Controllers
 {
@@ -84,16 +84,10 @@ namespace CinemaManagement.Controllers
             return View();
         }
 
+        //post insert film
         [HttpPost]
         public ActionResult insertFilm(FormCollection formCollection)
         {
-            foreach (string key in formCollection.AllKeys)
-            {
-                Response.Write("Key + " + key + " ");
-                Response.Write(formCollection[key] + "</br>");
-            }
-
-
             FilmDAO fDAO = new FilmDAO();
             string F_Name = formCollection["F_Name"];
             int id_P = Convert.ToInt32(formCollection["Producers"]);
@@ -150,39 +144,60 @@ namespace CinemaManagement.Controllers
         [HttpGet]
         public ActionResult getAllBill()
         {
-            return View();
-        }
+            List<Bill> list = new List<Bill>();
+            BillDAO bDao = new BillDAO();
+            list = bDao.getAllBill();
 
-
-        // Post: all bill
-        [HttpPost]
-        public ActionResult getAllBill(FormCollection formCollection)
-        {
-
-            BillDAO bDAO = new BillDAO();
-
-
-            bDAO.getAllBill();
-
-
-            return View();
+            return View(list);
         }
 
         //get all film
         [HttpGet]
         public ActionResult getAllFilm()
         {
-            return View();
+            List<Films> list = new List<Films>();
+            FilmDAO fDao = new FilmDAO();
+            list = fDao.getAllFilm();
+
+            return View(list);
         }
 
-
-        // Post: all bill
-        [HttpPost]
-        public ActionResult getAllFilm(FormCollection formCollection)
+        //get Update films
+        [HttpGet]
+        public ActionResult updateFilm()
         {
-            return View();
+            int id_F = Convert.ToInt32(this.Request.QueryString["id_F"]);
+            Films film = new FilmDAO().getFilmById(id_F);
+
+            return View(film);
         }
 
+        //post update film
+        [HttpPost]
+        public ActionResult updateFilm(FormCollection formCollection)
+        {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+            FilmDAO fDAO = new FilmDAO();
+            int id_F = Convert.ToInt32(formCollection["id_F"]);
+            string F_Name = formCollection["F_Name"];
+            int id_P = Convert.ToInt32(formCollection["Producers"]);
+            DateTime ReleaseDate = Convert.ToDateTime(formCollection["ReleaseDate"]);
+            Double Rating = Convert.ToDouble(formCollection["Rating"]);
+            int LimitAge = Convert.ToInt32(formCollection["LimitAge"]);
+            DateTime AirDate = Convert.ToDateTime(formCollection["AirDate"]);
+            DateTime EndDate = Convert.ToDateTime(formCollection["EndDate"]);
+            String Description = formCollection["Description"];
+            int Status = Convert.ToInt32(formCollection["Status"]);
+            
+
+            fDAO.updateFilm(id_F, F_Name, id_P, ReleaseDate, Rating, LimitAge, AirDate, EndDate, Description, Status);
+
+            return View();
+        }
 
         [HttpPost]
         public ActionResult insertRoom(FormCollection formCollection)
