@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Net.Http;
 using CinemaManagement.DAO;
 using System.ComponentModel.Design;
+using CinemaManagement.Models;
+using MySql.Data.MySqlClient;
 
 namespace CinemaManagement.Controllers
 {
@@ -13,13 +15,6 @@ namespace CinemaManagement.Controllers
     {
         // GET: Admins
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        // GET: Admins/insertProducers
-        [HttpGet]
-        public ActionResult insertProducer()
         {
             return View();
         }
@@ -184,10 +179,6 @@ namespace CinemaManagement.Controllers
         [HttpPost]
         public ActionResult getAllFilm(FormCollection formCollection)
         {
-
-            
-
-
             return View();
         }
 
@@ -259,6 +250,40 @@ namespace CinemaManagement.Controllers
         [HttpGet]
         public ActionResult insertSchedule()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult insertSchedule(FormCollection formCollection)
+        {
+            foreach (string key in formCollection.AllKeys)
+            {
+                Response.Write("Key + " + key + " ");
+                Response.Write(formCollection[key] + "</br>");
+            }
+
+            DateTime StartTime = Convert.ToDateTime(formCollection["StartTime"]);
+            DateTime EndTime = Convert.ToDateTime(formCollection["EndTime"]);
+            DateTime Sche_Date = Convert.ToDateTime(formCollection["Sche_Date"]);
+
+            SessionDAO sesDAO = new SessionDAO();
+            Session session = sesDAO.getSessionByTime(StartTime, EndTime);
+
+            int id_Ses = -1;
+
+            if(session == null)
+            {
+                id_Ses = sesDAO.createSession(StartTime, EndTime);
+            } else
+            {
+                id_Ses = session.id_Ses;
+            }
+
+            int id_F = Convert.ToInt32(formCollection["id_F"]);
+
+            ScheduleDAO scheDAO = new ScheduleDAO();
+            scheDAO.createSchedule(id_Ses, Sche_Date, id_F);
+
             return View();
         }
     }

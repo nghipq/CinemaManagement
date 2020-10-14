@@ -17,7 +17,7 @@ namespace CinemaManagement.DAO
             this.conn = new DBConnection.DBConnection().conn;
         }
 
-        public Session getSessionById(DateTime StartTime, DateTime EndTime)
+        public Session getSessionByTime(DateTime StartTime, DateTime EndTime)
         {
             string sql = "select * from Session where StartTime = @Starttime and EndTime = @EndTime";
             using (MySqlConnection conn = new DBConnection.DBConnection().conn)
@@ -25,6 +25,8 @@ namespace CinemaManagement.DAO
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 command.Parameters.AddWithValue("@StartTime", StartTime.ToString());
                 command.Parameters.AddWithValue("@EndTime", EndTime.ToString());
+
+                conn.Open();
 
                 MySqlDataReader dr = command.ExecuteReader();
                 Session session = null;
@@ -48,18 +50,34 @@ namespace CinemaManagement.DAO
 
         public int createSession(DateTime StartTime, DateTime EndTime)
         {
-            String sql = "Insert into Session (StartTime, EndTime, Status) values (@StartTime, @EndTime, @Status) ";
+            String sql1 = "Insert into Session (StartTime, EndTime, Status) values (@StartTime, @EndTime, @Status) ";
 
             using (MySqlConnection conn = new DBConnection.DBConnection().conn)
             {
-                MySqlCommand command = new MySqlCommand(sql, conn);
-                command.Parameters.AddWithValue("@StartTime", StartTime.ToString());
-                command.Parameters.AddWithValue("@EndTime", EndTime.ToString());
-                command.Parameters.AddWithValue("@Status", true);
+                MySqlCommand command1 = new MySqlCommand(sql1, conn);
+                command1.Parameters.AddWithValue("@StartTime", StartTime.ToString("hh:mm:ss"));
+                command1.Parameters.AddWithValue("@EndTime", EndTime.ToString("hh:mm:ss"));
+                command1.Parameters.AddWithValue("@Status", true);
 
                 conn.Open();
-                int result = command.ExecuteNonQuery();
+                int result = command1.ExecuteNonQuery();
                 conn.Close();
+
+                if(result > 0)
+                {
+                    string sql2 = "select max(id_Ses) as id_Ses from Session";
+                    MySqlCommand command2 = new MySqlCommand(sql2, conn);
+
+                    conn.Open();
+
+                    MySqlDataReader dr = command2.ExecuteReader();
+
+                    conn.Close();
+                    if(dr.Read())
+                    {
+                        return Convert.ToInt32(dr["id_Ses"]);
+                    }
+                }
 
                 return result;
             }
