@@ -5,9 +5,10 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net.Http;
 using CinemaManagement.DAO;
-using System.ComponentModel.Design;
 using CinemaManagement.Models;
+using System.ComponentModel.Design;
 using MySql.Data.MySqlClient;
+
 
 namespace CinemaManagement.Controllers
 {
@@ -18,7 +19,7 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
-        
+
         //GET: Admins/insertFilm
         [HttpGet]
         public ActionResult InsertCinema()
@@ -32,8 +33,8 @@ namespace CinemaManagement.Controllers
         {
 
             CinemaDAO cDAO = new CinemaDAO();
-            string C_Name = formCollection["C_Name"];       
-            string C_Address = formCollection["C_Address"];       
+            string C_Name = formCollection["C_Name"];
+            string C_Address = formCollection["C_Address"];
             string C_Phone = formCollection["C_Phone"];
             string C_Email = formCollection["C_Email"];
             string Description = formCollection["Description"];
@@ -62,7 +63,6 @@ namespace CinemaManagement.Controllers
             }
 
             ProducerDAO pDAO = new ProducerDAO();
-
             string P_Name = formCollection["P_Name"];
             int id_N = Convert.ToInt32(formCollection["id_N"]);
             string Description = formCollection["Description"];
@@ -75,7 +75,7 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-        
+
         //POST: Admins/insertFilm
         //Get Film
         [HttpGet]
@@ -108,7 +108,7 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-        
+
         //GET: Admins/insertSchedule
         //GetPerson
         [HttpGet]
@@ -118,7 +118,8 @@ namespace CinemaManagement.Controllers
         }
 
         [HttpPost]
-        public ActionResult insertPerson(FormCollection formCollection) {
+        public ActionResult insertPerson(FormCollection formCollection)
+        {
 
             PersonDAO PerDAO = new PersonDAO();
             string Per_Name = formCollection["Per_Name"];
@@ -162,7 +163,7 @@ namespace CinemaManagement.Controllers
 
 
             bDAO.getAllBill();
-            
+
 
             return View();
         }
@@ -213,11 +214,26 @@ namespace CinemaManagement.Controllers
             String F_Name = formCollection["F_Name"];
             String Description = formCollection["Description"];
             int F_Price = Convert.ToInt32(formCollection["F_Price"]);
-            Boolean Status = Convert.ToBoolean (formCollection["Status"]);
-            fodao.CreateFormality(F_Name,Description,F_Price, Status);//0 la chua hoat dong
+            Boolean Status = Convert.ToBoolean(formCollection["Status"]);
+            fodao.CreateFormality(F_Name, Description, F_Price, Status);//0 la chua hoat dong
             return View();
         }
-        
+
+        [HttpGet]
+        public ActionResult ListRoom()
+        {
+            RoomDAO rdao = new RoomDAO();
+            List<Room> room = rdao.GetAllRoom();
+            return View(room);
+        }
+        [HttpGet]
+        public ActionResult EditRoom()
+        {
+            int id_R = Convert.ToInt32(this.Request.QueryString["id_R"]);
+ //           Room room = new RoomDAO().SelectRoomById(id_R);
+            return View();
+        }
+
         [HttpGet]
         public ActionResult SelectRoomById()
         {
@@ -271,10 +287,11 @@ namespace CinemaManagement.Controllers
 
             int id_Ses = -1;
 
-            if(session == null)
+            if (session == null)
             {
                 id_Ses = sesDAO.createSession(StartTime, EndTime);
-            } else
+            }
+            else
             {
                 id_Ses = session.id_Ses;
             }
@@ -283,7 +300,6 @@ namespace CinemaManagement.Controllers
 
             ScheduleDAO scheDAO = new ScheduleDAO();
             scheDAO.createSchedule(id_Ses, Sche_Date, id_F);
-
             return View();
         }
     }
