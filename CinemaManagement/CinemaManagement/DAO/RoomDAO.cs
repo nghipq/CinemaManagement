@@ -133,7 +133,7 @@ namespace CinemaManagement.DAO
                     conn.Open();
                     String query = "SELECT * FROM `ROOM` WHERE id_R=@id_R";
                     MySqlCommand command = new MySqlCommand(query, conn);
-                    command.Parameters.AddWithValue("@id_R", id_R);
+                    command.Parameters.AddWithValue("@id_R", Id_R);
                     result = command.ExecuteNonQuery();
                     MySqlDataReader rdr = command.ExecuteReader();
                     while (rdr.Read())
