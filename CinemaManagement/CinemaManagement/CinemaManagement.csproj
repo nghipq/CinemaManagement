@@ -200,7 +200,6 @@
     <Content Include="Views\Admins\CreateCinema.cshtml">
       <BrowseToURL>C:\Users\Admin\Desktop\UNIVERSITY\FA20\PRN292\Project\CinemaManagement\CinemaManagement\CinemaManagement\Views\Admins\CreateCinema</BrowseToURL>
     </Content>
-    <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Admins\getAllBill.cshtml" />
     <Content Include="Views\Admins\getAllFilm.cshtml" />
     <Content Include="Views\Admins\insertPerson.cshtml" />
@@ -210,6 +209,7 @@
     <Content Include="Views\Admins\insertFilm.cshtml" />
     <Content Include="Views\Admins\SelectRoomById.cshtml" />
     <Content Include="Views\Admins\insertSchedule.cshtml" />
+    <Content Include="Views\Admins\insertProducers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
