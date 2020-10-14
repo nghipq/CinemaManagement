@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<CinemaManagement.Models.Films>
 
 @{
-    ViewBag.Title = "Film List";
+    ViewBag.Title = "Films List";
 }
 
 <h2>Films List</h2>
 
 <p>
-    @Html.ActionLink("Create New", "insertFilm")
+    @Html.ActionLink("Add new film", "insertFilm")
 </p>
 <table class="table">
     <tr>
@@ -44,49 +44,47 @@
         <th></th>
     </tr>
 
-    @{
-        List<CinemaManagement.Models.Films> film = new List<CinemaManagement.Models.Films>();
-    }
+    
 
-    @foreach (var item in film)
+    @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.id_F)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.F_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.id_P)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LimitAge)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AirDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.id_F)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.F_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.id_P)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ReleaseDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Rating)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LimitAge)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.AirDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.EndDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Status)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "updateFilm", new { id_F = item.id_F }) |
+        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+    </td>
+</tr>
     }
 
 </table>

@@ -10,7 +10,7 @@ namespace CinemaManagement.DAO
 {
     public class FilmDAO
     {
-        private List<Films> ProList = new List<Films>();
+        private List<Films> list = new List<Films>();
         private MySqlConnection conn { get; set; }
 
         public FilmDAO()
@@ -53,8 +53,6 @@ namespace CinemaManagement.DAO
 
         public List<Films> getAllFilm()
         {
-            List<Films> list = new List<Films>();
-
             using (conn)
             {
                 string sql = "select * from Films";
@@ -87,6 +85,41 @@ namespace CinemaManagement.DAO
             }
 
             return list;
+        }
+
+        public int updateFilm(String F_Name, int id_P, DateTime ReleaseDate, Double Rating, int LimitAge, DateTime AirDate, DateTime EndDate, String Description, Boolean Status)
+        {
+            int result = 0;
+            using (conn)
+            {
+                try
+                {
+                    conn.Open();
+                    string sql = "Update Films (F_Name, id_P, ReleaseDate, Rating, LimitAge, AirDate, EndDate, Description, Status) " +
+                        "values (@F_Name, @id_P, @ReleaseDate, @Rating, @LimitAge, @AirDate, @EndDate, @Description, @Status)" +
+                        "Where id_F" ;
+                    MySqlCommand command = new MySqlCommand(sql, conn);
+
+                    command.Parameters.AddWithValue("@F_Name", F_Name);
+                    command.Parameters.AddWithValue("@id_P", id_P);
+                    command.Parameters.AddWithValue("@ReleaseDate", ReleaseDate);
+                    command.Parameters.AddWithValue("@Rating", Rating);
+                    command.Parameters.AddWithValue("@LimitAge", LimitAge);
+                    command.Parameters.AddWithValue("@AirDate", AirDate);
+                    command.Parameters.AddWithValue("@EndDate", EndDate);
+                    command.Parameters.AddWithValue("@Description", Description);
+                    command.Parameters.AddWithValue("@Status", Status);
+                    result = command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Failed to connect to database due to" + ex.ToString());
+                    MessageBox.Show("Failed to insert data due to" + ex.ToString());
+                }
+
+            }
+            return result;
         }
     }
 }
