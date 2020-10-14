@@ -16,12 +16,35 @@ namespace CinemaManagement.DAO
             this.conn = new DBConnection.DBConnection().conn;
         }
 
-        public List<Bill> getAllBill() 
+        public List<Bill> getAllBill()
         {
             List<Bill> list = new List<Bill>();
+
             using (conn)
             {
-                string aql = "Select * from Bill";
+                string sql = "select * from Bill";
+                MySqlCommand com = new MySqlCommand(sql);
+                com.Connection = conn;
+
+                conn.Open();
+
+                MySqlDataReader dr = com.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    list.Add(new Bill
+                    {
+                        id_B = Convert.ToInt32(dr["id_B"]),
+                        id_Cus = Convert.ToInt32(dr["id_Cus"]),
+                        id_Staff = Convert.ToInt32(dr["id_Staff"]),
+                        DateBuy = Convert.ToDateTime(dr["DateBuy"]),
+                        Total = Convert.ToInt32(dr["Total"]),
+                        Status = Convert.ToBoolean(true)
+                    });
+                }
+
+                //đóng db sau khi dùng xong nhe
+                conn.Close();
             }
 
             return list;

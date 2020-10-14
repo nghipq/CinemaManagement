@@ -14,18 +14,22 @@ namespace CinemaManagement.DAO
         {
             this.conn = new DBConnection.DBConnection().conn;
         }
-        public int CreateSeat(String seatName, bool status)
+        public int CreateSeat(int id_R, String seatName, bool status)
         {
-            String query = "Insert into RoomSeat(`S_Name`, `Status`) values(@seatName, @status)";
+            String query = "Insert into RoomSeat(`id_R`, `S_Name`, `Status`) values(@id_R, @SeatName, @Status)";
             //chuyển lệnh sql sang định dạng của thư viện MySQL
 
             using (conn)
             {
                 MySqlCommand command = new MySqlCommand(query, conn);
+                command.Parameters.AddWithValue("@id_R", id_R);
                 command.Parameters.AddWithValue("@SeatName", seatName);
                 command.Parameters.AddWithValue("@Status", status);
+
                 conn.Open();
                 int result = command.ExecuteNonQuery();
+                conn.Close();
+                
                 return result;
 
             }
