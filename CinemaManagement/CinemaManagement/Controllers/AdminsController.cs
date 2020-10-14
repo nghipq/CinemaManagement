@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Net.Http;
 using CinemaManagement.DAO;
+using CinemaManagement.Models;
 
 namespace CinemaManagement.Controllers
 {
@@ -173,6 +174,18 @@ namespace CinemaManagement.Controllers
             int F_Price = Convert.ToInt32(formCollection["F_Price"]);
             Boolean Status = Convert.ToBoolean (formCollection["Status"]);
             fodao.CreateFormality(F_Name,Description,F_Price, Status);//0 la chua hoat dong
+            return View();
+        }
+        [HttpGet]
+        public ActionResult ListRoom()
+        {
+            RoomDAO rdao = new RoomDAO();
+            List<Room> room = rdao.GetAllRoom();
+            return View(room);
+        }
+        [HttpGet]
+        public ActionResult EditRoom()
+        {
             return View();
         }
     }
