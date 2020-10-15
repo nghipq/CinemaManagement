@@ -1960,10 +1960,8 @@
     </Content>
     <Content Include="images\static\*" />
     <Content Include="Views\*" />
-    <Content Include="Views\Shared\*" />
     <Content Include="Views\Admins\Index.cshtml" />
     <Content Include="Views\Admins\insertShedule.cshtml" />
-    <Content Include="Views\Admins\CreateCinema.cshtml" />
     <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Admins\getAllBill.cshtml" />
     <Content Include="Views\Admins\getAllFilm.cshtml" />
@@ -1979,7 +1977,9 @@
     <Content Include="Views\Admins\insertSchedule.cshtml" />
     <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admins\insertGraphics.cshtml" />
     <Content Include="Views\Admins\EditRoom.cshtml" />
+    <Content Include="Views\Admins\getAllSchedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
