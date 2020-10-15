@@ -43,7 +43,7 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-       
+
 
         //Insert Producer
         [HttpGet]
@@ -132,11 +132,8 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-<<<<<<< HEAD
 
-        [HttpGet]
-        public ActionResult InsertRoom()
-=======
+
         [HttpGet]
         public ActionResult InsertRoom()
         {
@@ -144,7 +141,6 @@ namespace CinemaManagement.Controllers
         }
         [HttpPost]
         public ActionResult InsertRoom(FormCollection formCollection)
->>>>>>> 5f75146e43c35d65e3bf8acab967c5e245a7b40e
         {
             RoomDAO rdao = new RoomDAO();
             int id_C = Convert.ToInt32(formCollection["Cinema"]);
@@ -217,14 +213,14 @@ namespace CinemaManagement.Controllers
             DateTime EndDate = Convert.ToDateTime(formCollection["EndDate"]);
             String Description = formCollection["Description"];
             int Status = Convert.ToInt32(formCollection["Status"]);
-            
+
 
             fDAO.updateFilm(id_F, F_Name, id_P, ReleaseDate, Rating, LimitAge, AirDate, EndDate, Description, Status);
 
             return View();
         }
 
-        
+
         [HttpGet]
         public ActionResult Formality()
         {
@@ -258,7 +254,7 @@ namespace CinemaManagement.Controllers
         public ActionResult EditRoom()
         {
             int id_R = Convert.ToInt32(this.Request.QueryString["id_R"]);
- //           Room room = new RoomDAO().SelectRoomById(id_R);
+            //           Room room = new RoomDAO().SelectRoomById(id_R);
             return View();
         }
 
