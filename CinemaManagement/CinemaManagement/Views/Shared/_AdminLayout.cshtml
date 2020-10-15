@@ -145,7 +145,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               @*show Bill menu*@
               <li class="nav-item has-treeview menu-open" id="ListB">
-                  <a href="#" class="nav-link active" id="bill">
+                  <a href="Admins/getAllBill" class="nav-link active" id="bill">
                       <i class="nav-icon fas fa-file-invoice-dollar"></i>
                       <p>
                           Bill List
@@ -208,7 +208,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a href="#" class="nav-link active" id="AddC">
+                          <a href="Admins/InsertCinema" class="nav-link active" id="AddC">
                               <i class="far fa-circle nav-icon" id="btnAC"></i>
                               <p>Add new Cinema</p>
                           </a>
@@ -312,7 +312,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-            @RenderBody()
+            <div class="container">
+                @RenderBody()
+            </div>
+            
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>

@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "New Film";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Add new film</h2>
@@ -106,6 +107,3 @@
     @Html.ActionLink("Back to List", "getAllFilm")
 </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
