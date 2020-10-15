@@ -1,0 +1,75 @@
+﻿@model IEnumerable<CinemaManagement.Models.Room>
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "InsertRoom")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_R)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_C)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_SeatNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Row)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Col)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.R_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_R)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_C)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_SeatNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Row)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Col)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.R_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditRoom", new { id_R = item.id_C }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
