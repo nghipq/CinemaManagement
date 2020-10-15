@@ -12,6 +12,6 @@ namespace CinemaManagement.Models
         public int G_Type { get; set; }
         public DateTime DateUpdate { get; set; }
         public String Path { get; set; }
-        public Boolean Status { get; set; }
+        public int Status { get; set; }
     }
 }

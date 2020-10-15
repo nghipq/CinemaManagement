@@ -1,13 +1,26 @@
 ﻿@model IEnumerable<CinemaManagement.Models.Bill>
 
 @{
+<<<<<<< HEAD
     ViewBag.Title = "Bill List";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
+=======
+
+<<<<<<< HEAD
+    ViewBag.Title = "Bills List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+=======
+    ViewBag.Title = "getAllBill";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Bills List";
+>>>>>>> 1cfab255df496145d1b3b817554135016d4b4d5b
+
+>>>>>>> 5f75146e43c35d65e3bf8acab967c5e245a7b40e
 }
 
-<h2>Bills List</h2>
+<h2 class="text-center text-white">Bill List</h2>
 
-<table class="table">
+<table class="table text-white text-cener">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.id_B)
@@ -30,6 +43,7 @@
         <th></th>
     </tr>
 
+<<<<<<< HEAD
 
     @foreach (var item in Model)
     {
@@ -59,5 +73,34 @@
             </td>
         </tr>
     }
+=======
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_B)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_Cus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_Staff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateBuy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+>>>>>>> 5f75146e43c35d65e3bf8acab967c5e245a7b40e
 
 </table>

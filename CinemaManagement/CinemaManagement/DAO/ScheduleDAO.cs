@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CinemaManagement.Models;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace CinemaManagement.DAO
     public class ScheduleDAO
     {
         public MySqlConnection conn { get; set; }
+        private List<Schedule> list = new List<Schedule>();
         public ScheduleDAO()
         {
             this.conn = new DBConnection.DBConnection().conn;
@@ -38,6 +40,36 @@ namespace CinemaManagement.DAO
                 conn.Close();
                 return rs;
             }
+        }
+        public List<Schedule> getAllSchedule()
+        {
+            using (conn)
+            {
+                string sql = "SELECT * FROM `Schedule`";
+                MySqlCommand com = new MySqlCommand(sql);
+                com.Connection = conn;
+
+                conn.Open();
+
+                MySqlDataReader dr = com.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    list.Add(new Schedule
+                    {
+                        id_Sche = Convert.ToInt32(dr["id_Sche"]),
+                        id_Ses = Convert.ToInt32(dr["id_Ses"]),
+                        id_F = Convert.ToInt32(dr["id_F"]),
+                        Status = Convert.ToInt32(dr["Status"]),
+                        Sche_Date = Convert.ToDateTime(dr["Sche_Date"]),
+                    }) ;
+                }
+
+                //đóng db sau khi dùng xong nhe
+                conn.Close();
+            }
+
+            return list;
         }
     }
 }

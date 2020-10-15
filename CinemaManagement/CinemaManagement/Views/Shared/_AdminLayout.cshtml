@@ -153,6 +153,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         @*end Bill show*@
 
+<<<<<<< HEAD
                         @*show user list menu*@
                         <li class="nav-item has-treeview menu-open">
                             <a href="#" class="nav-link active">
@@ -189,6 +190,67 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
                         @*end ScheduleList show*@
+=======
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+    with font-awesome or any other icon font library -->
+              @*show fiml menu*@
+              <li class="nav-item has-treeview menu-open" id="listF" >
+                  <a href="#" class="nav-link active" id="film" >
+                      <i class="nav-icon fas fa-film"></i>
+                      <p>
+                          Film List
+                          <i class="right fas fa-angle-left" id="filmMenu"></i>
+                      </p>
+                  </a>
+                  <ul class="nav nav-treeview" id="Menufilm">
+                      <li class="nav-item">
+                          <a href="/Admins/getAllFilm" class="nav-link active" id="filmList">
+                              <i class="far fa-circle nav-icon" id="btnFL"></i>
+                              <p>List Film Page</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="/Admins/insertFilm" class="nav-link" id="filmAdd">
+                              <i class="far fa-circle nav-icon" id="btnFAdd"></i>
+                              <p>Add Film Page</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link" id="filmNShow">
+                              <i class="far fa-circle nav-icon" id="btnNS"></i>
+                              <p>Now Showing</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link" id="filmCSoon">
+                              <i class="far fa-circle nav-icon" id="btnCS"></i>
+                              <p>Comming Soon</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link" id="Revenue">
+                              <i class="far fa-circle nav-icon" id="btnR"></i>
+                              <p>Revenue</p>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+              @*end film show*@
+
+              @*show Bill menu*@
+              <li class="nav-item has-treeview menu-open" id="ListB">
+                  <a href="/Admins/getAllBill" class="nav-link active" id="bill">
+                      <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                      <p>
+                          Bill List
+                      </p>
+                  </a>
+              </li>
+              @*end Bill show*@
+>>>>>>> 5f75146e43c35d65e3bf8acab967c5e245a7b40e
 
                         @*show Cinema menu*@
                         <li class="nav-item has-treeview menu-open">
@@ -222,6 +284,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         @*end Cinema show*@
 
+<<<<<<< HEAD
                         @*show producer list menu*@
                         <li class="nav-item has-treeview menu-open">
                             <a href="#" class="nav-link active">
@@ -346,6 +409,97 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
                         @*end Bill show*@
+=======
+              @*show ScheduleList menu*@
+              <li class="nav-item has-treeview menu-open" id="ListS">
+                  <a href="#" class="nav-link active" id="schedule">
+                      <i class="nav-icon fas fa-clipboard-list"></i>
+                      <p>
+                          Schedule List
+                          <i class="right fas fa-angle-left" id="scheduleMenu"></i>
+                      </p>
+                  </a>
+                  <ul class="nav nav-treeview" id="Menuschedule">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link active" id="ListS">
+                              <i class="far fa-circle nav-icon" id="btnSL"></i>
+                              <p>List Schedule</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="Admins/insertSchedule" class="nav-link" id="AddS">
+                              <i class="far fa-circle nav-icon" id="btnAS"></i>
+                              <p>Add New Schedule</p>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+              @*end ScheduleList show*@
+
+              @*show Cinema menu*@
+              <li class="nav-item has-treeview menu-open" id="ListC">
+                  <a href="#" class="nav-link active" id="Cinema">
+                      <i class="nav-icon fas fa-house-user"></i>
+                      <p>
+                          Cinema List
+                          <i class="right fas fa-angle-left" id="cinemaMenu"></i>
+                      </p>
+                  </a>
+                  <ul class="nav nav-treeview" id="Menucinema">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link" id="ListC">
+                              <i class="far fa-circle nav-icon" id="btnCL"></i>
+                              <p>Cinema List</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="InsertCinema" class="nav-link active" id="AddC">
+                              <i class="far fa-circle nav-icon" id="btnAC"></i>
+                              <p>Add new Cinema</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link" id="UpC">
+                              <i class="far fa-circle nav-icon" id="btnUpC"></i>
+                              <p>Update Cinema</p>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+              @*end Cinema show*@
+
+              @*show producer list menu*@
+              <li class="nav-item has-treeview menu-open" id="ListP">
+                  <a href="#" class="nav-link active" id="Producer">
+                      <i class="nav-icon fab fa-product-hunt"></i>
+                      <p>
+                          Producer List
+                          <i class="right fas fa-angle-left" id="producerMenu"></i>
+                      </p>
+                  </a>
+                  <ul class="nav nav-treeview" id="Menuproducer">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link" id="ListP">
+                              <i class="far fa-circle nav-icon" id="btnLP"></i>
+                              <p>Producer List</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="Admins/insertProducers" class="nav-link active" id="AddP">
+                              <i class="far fa-circle nav-icon" id="btnAP"></i>
+                              <p>Add new Producer</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link active" id="UpP">
+                              <i class="far fa-circle nav-icon" id="btnUpP"></i>
+                              <p>Update Producer</p>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+              @*end producer list show*@
+>>>>>>> 5f75146e43c35d65e3bf8acab967c5e245a7b40e
 
                         @*show user list menu*@
                         <li class="nav-item has-treeview menu-open" id="ListU">
@@ -448,6 +602,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         @*end producer list show*@
 
+<<<<<<< HEAD
                         @*show person list menu*@
                         <li class="nav-item has-treeview menu-open" id="ListPer">
                             <a href="#" class="nav-link active" id="Person">
@@ -479,6 +634,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
                         @*end Person list show*@
+=======
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="container">
+                @RenderBody()
+            </div>
+            
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+>>>>>>> 5f75146e43c35d65e3bf8acab967c5e245a7b40e
 
                         <li class="nav-item">
                             <a href="#" class="nav-link">

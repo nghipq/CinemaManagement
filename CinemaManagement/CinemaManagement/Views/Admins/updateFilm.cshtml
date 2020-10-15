@@ -1,11 +1,21 @@
 ﻿@model CinemaManagement.Models.Films
 
+@{
+
+    ViewBag.Title = "Edit Film";
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="text-white text-center">Edit film</h2>
+
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-   
-    <div class="form-horizontal">
-        <h4>Films</h4>
+
+    <div class="form-horizontal text-white">
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
