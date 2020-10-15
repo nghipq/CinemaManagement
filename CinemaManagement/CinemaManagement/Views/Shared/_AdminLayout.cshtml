@@ -116,7 +116,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a href="#" class="nav-link" id="filmAdd">
+                          <a href="Admins/insertFilm" class="nav-link" id="filmAdd">
                               <i class="far fa-circle nav-icon" id="btnFAdd"></i>
                               <p>Add Film Page</p>
                           </a>
@@ -312,7 +312,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
-            @RenderBody()
+            <div class="container">
+                @RenderBody()
+            </div>
+            
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>

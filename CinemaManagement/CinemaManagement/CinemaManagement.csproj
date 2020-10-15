@@ -1960,7 +1960,6 @@
     </Content>
     <Content Include="images\static\*" />
     <Content Include="Views\*" />
-    <Content Include="Views\Shared\*" />
     <Content Include="Views\Admins\Index.cshtml" />
     <Content Include="Views\Admins\insertShedule.cshtml" />
 
