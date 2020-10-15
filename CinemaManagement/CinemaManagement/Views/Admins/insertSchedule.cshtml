@@ -1,11 +1,17 @@
 ﻿@model CinemaManagement.Models.Schedule
 
-@using (Html.BeginForm()) 
+@{
+    ViewBag.Title = "Insert Schedule";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Insert Schedule</h2>
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Schedule</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
