@@ -5,32 +5,30 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Bill List</h2>
-
+<h2>Bills List</h2>
 
 <table class="table">
     <tr>
         <th>
-            ID Bill
+            @Html.DisplayNameFor(model => model.id_B)
         </th>
         <th>
-            ID Customer
+            @Html.DisplayNameFor(model => model.id_Cus)
         </th>
         <th>
-            ID Staff
+            @Html.DisplayNameFor(model => model.id_Staff)
         </th>
         <th>
-            Date Buy
+            @Html.DisplayNameFor(model => model.DateBuy)
         </th>
         <th>
-            Total
+            @Html.DisplayNameFor(model => model.Total)
         </th>
         <th>
-            Status
+            @Html.DisplayNameFor(model => model.Status)
         </th>
         <th></th>
     </tr>
-    
 
 
     @foreach (var item in Model)
