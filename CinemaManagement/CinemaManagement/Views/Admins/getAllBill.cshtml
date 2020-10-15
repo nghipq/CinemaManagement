@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Bill List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h2>Bill List</h2>
@@ -30,12 +31,9 @@
         <th></th>
     </tr>
     
-    @{ 
-        List<CinemaManagement.Models.Bill> bill = new List<CinemaManagement.Models.Bill>();
-    }
 
 
-    @foreach (var item in bill)
+    @foreach (var item in Model)
     {
         <tr>
             <td>

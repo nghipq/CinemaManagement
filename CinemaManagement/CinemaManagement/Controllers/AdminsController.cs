@@ -133,11 +133,6 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-        [HttpGet]
-        public ActionResult insertRoom()
-        {
-            return View();
-        }
 
         [HttpGet]
         public ActionResult InsertRoom()
