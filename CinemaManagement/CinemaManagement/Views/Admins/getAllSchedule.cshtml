@@ -1,28 +1,28 @@
-﻿@model IEnumerable<CinemaManagement.Models.Bill>
+﻿@model IEnumerable<CinemaManagement.Models.Schedule>
 
 @{
-    ViewBag.Title = "Bills List";
-
+    ViewBag.Title = "getAllSchedule";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Bills List</h2>
+<h2>getAllSchedule</h2>
 
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.id_B)
+            @Html.DisplayNameFor(model => model.id_Sche)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.id_Cus)
+            @Html.DisplayNameFor(model => model.id_Ses)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.id_Staff)
+            @Html.DisplayNameFor(model => model.Sche_Date)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateBuy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Total)
+            @Html.DisplayNameFor(model => model.id_F)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Status)
@@ -34,19 +34,17 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.id_B)
+                @Html.DisplayFor(modelItem => item.id_Sche)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.id_Cus)
+                @Html.DisplayFor(modelItem => item.id_Ses)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.id_Staff)
+                @Html.DisplayFor(modelItem => item.Sche_Date)
             </td>
+
             <td>
-                @Html.DisplayFor(modelItem => item.DateBuy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Total)
+                @Html.DisplayFor(modelItem => item.id_F)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Status)
