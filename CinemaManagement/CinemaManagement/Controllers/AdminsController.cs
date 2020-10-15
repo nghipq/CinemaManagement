@@ -108,8 +108,12 @@ namespace CinemaManagement.Controllers
 
             return View();
         }
-        
-        //GET: Admins/insertSchedule
+        [HttpGet]
+        public ActionResult insertGraphics()
+        {
+            return View();
+        }
+
         //GetPerson
         [HttpGet]
         public ActionResult insertPerson()
@@ -137,14 +141,6 @@ namespace CinemaManagement.Controllers
         {
             return View();
         }
-
-        [HttpGet]
-        public ActionResult InsertRoom()
-        {
-            return View();
-        }
-
-
         //get all bill
         [HttpGet]
         public ActionResult getAllBill()
@@ -246,6 +242,7 @@ namespace CinemaManagement.Controllers
             rDAO.GetAllRoomByCinemaId(id_C);
             return View();
         }
+
 
         [HttpGet]
         public ActionResult insertSchedule()

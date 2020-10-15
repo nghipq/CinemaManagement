@@ -1964,9 +1964,6 @@
     <Content Include="Views\Shared\*" />
     <Content Include="Views\Admins\Index.cshtml" />
     <Content Include="Views\Admins\insertShedule.cshtml" />
-    <Content Include="Views\Admins\CreateCinema.cshtml">
-      <BrowseToURL>C:\Users\Admin\Desktop\UNIVERSITY\FA20\PRN292\Project\CinemaManagement\CinemaManagement\CinemaManagement\Views\Admins\CreateCinema</BrowseToURL>
-    </Content>
     <Content Include="Views\Admins\getAllBill.cshtml" />
     <Content Include="Views\Admins\getAllFilm.cshtml" />
     <Content Include="Views\Admins\insertPerson.cshtml" />
@@ -1978,6 +1975,7 @@
     <Content Include="Views\Admins\insertSchedule.cshtml" />
     <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admins\insertGraphics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
