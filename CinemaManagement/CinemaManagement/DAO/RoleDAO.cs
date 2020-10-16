@@ -23,7 +23,7 @@ namespace CinemaManagement.DAO
             using (conn)
             {
                 string sql = "select * from Role";
-                MySqlCommand com = new MySqlCommand(sql);
+                MySqlCommand com = new MySqlCommand(sql, conn);
                 com.Connection = conn;
 
                 conn.Open();
@@ -32,12 +32,11 @@ namespace CinemaManagement.DAO
 
                 while (dr.Read())
                 {
-                    Rlist.Add(new Role
-                    {
+                    Rlist.Add(new Role {
                         id_Role = Convert.ToInt32(dr["id_Role"]),
                         Role_Name = dr["Role_Name"].ToString(),
                         Description = dr["Description"].ToString(),
-                        Status = Convert.ToBoolean(dr["status"])
+                        Status = Convert.ToBoolean(dr["Status"]),
                     });
                 }
 

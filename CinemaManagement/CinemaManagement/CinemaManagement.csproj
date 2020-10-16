@@ -1959,26 +1959,15 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="images\static\*" />
-    <Content Include="Views\*" />
     <Content Include="Views\Admins\Index.cshtml" />
-    <Content Include="Views\Admins\insertShedule.cshtml" />
     <Content Include="Views\Admins\insertProducers.cshtml" />
-    <Content Include="Views\Admins\getAllFilm.cshtml" />
     <Content Include="Views\Admins\insertPerson.cshtml" />
-    <Content Include="Views\Admins\InsertRoom.cshtml" />
     <Content Include="Views\Admins\InsertCinema.cshtml" />
     <Content Include="Views\Admins\Formality.cshtml" />
     <Content Include="Views\Admins\insertFilm.cshtml" />
-    <Content Include="Views\Admins\updateFilm.cshtml" />
-    <Content Include="Views\Admins\ListRoom.cshtml" />
-    <Content Include="Views\Admins\SelectRoomById.cshtml" />
     <Content Include="Views\Admins\insertSchedule.cshtml" />
-    <Content Include="Views\Admins\insertProducers.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Views\Admins\insertGraphics.cshtml" />
     <Content Include="Views\Admins\EditRoom.cshtml" />
-    <Content Include="Views\Admins\getAllBill.cshtml" />
-    <Content Include="Views\Admins\getAllSchedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
