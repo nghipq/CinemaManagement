@@ -1,196 +1,99 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>@ViewBag.Title - TOS - Ticket Booking System</title>
+  <title>@ViewBag.Title - TOS - Ticket Booking System</title>
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
-    <div class="wrapper">
+<div class="wrapper">
 
-        <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-light" style="background: #fff">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-                <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
-                </li>
-            </ul>
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-light" style="background: #fff">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link">Home</a>
+      </li>
+    </ul>
 
-            <!-- SEARCH FORM -->
-            <form class="form-inline ml-3">
-                <div class="input-group input-group-sm">
-                    <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                    <div class="input-group-append">
-                        <button class="btn btn-navbar" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
 
-            <!-- Right navbar links -->
-            <ul class="navbar-nav ml-auto">
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
 
-                <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
-                            <span class="float-right text-muted text-sm">3 mins</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-users mr-2"></i> 8 friend requests
-                            <span class="float-right text-muted text-sm">12 hours</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-file mr-2"></i> 3 new reports
-                            <span class="float-right text-muted text-sm">2 days</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <i class="fas fa-th-large"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.navbar -->
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-light-white elevation-2">
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image w-100">
-                        <img src="~/images/static/logo.png" class="w-100" alt="User Image">
-                    </div>
-                </div>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
+            class="fas fa-th-large"></i></a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
 
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-                        @*show fiml menu*@
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-film"></i>
-                                <p>
-                                    Film List
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Film Page</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Film Page</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Now Showing</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Comming Soon</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Revenue</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end film show*@
-                        @*show Bill menu*@
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                                <p>
-                                    Bill List
-                                </p>
-                            </a>
-                        </li>
-                        @*end Bill show*@
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-light-white elevation-2">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image w-100">
+          <img src="~/images/static/logo.png" class="w-100" alt="User Image">
+        </div>
+      </div>
 
-<<<<<<< HEAD
-                        @*show user list menu*@
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-address-book"></i>
-                                <p>
-                                    User List
-                                </p>
-                            </a>
-                        </li>
-                        @*end user list show*@
-
-                        @*show ScheduleList menu*@
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-clipboard-list"></i>
-                                <p>
-                                    Schedule List
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>List Schedule</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add New Schedule</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end ScheduleList show*@
-=======
       <!-- Sidebar Menu -->
       <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -207,13 +110,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </a>
                   <ul class="nav nav-treeview" id="Menufilm">
                       <li class="nav-item">
-                          <a href="/Admins/getAllFilm" class="nav-link active" id="filmList">
+                          <a href="#" class="nav-link active" id="filmList">
                               <i class="far fa-circle nav-icon" id="btnFL"></i>
                               <p>List Film Page</p>
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a href="/Admins/insertFilm" class="nav-link" id="filmAdd">
+                          <a href="Admins/insertFilm" class="nav-link" id="filmAdd">
                               <i class="far fa-circle nav-icon" id="btnFAdd"></i>
                               <p>Add Film Page</p>
                           </a>
@@ -242,7 +145,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               @*show Bill menu*@
               <li class="nav-item has-treeview menu-open" id="ListB">
-                  <a href="/Admins/getAllBill" class="nav-link active" id="bill">
+                  <a href="Admins/getAllBill" class="nav-link active" id="bill">
                       <i class="nav-icon fas fa-file-invoice-dollar"></i>
                       <p>
                           Bill List
@@ -250,166 +153,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </a>
               </li>
               @*end Bill show*@
->>>>>>> 5f75146e43c35d65e3bf8acab967c5e245a7b40e
 
-                        @*show Cinema menu*@
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-house-user"></i>
-                                <p>
-                                    Cinema List
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Cinema List</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="Admins/InsertCinema" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add new Cinema</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Update Cinema</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end Cinema show*@
+              @*show user list menu*@
+              <li class="nav-item has-treeview menu-open" id="ListU">
+                  <a href="#" class="nav-link active" id="user">
+                      <i class="nav-icon fas fa-address-book"></i>
+                      <p>
+                          User List
+                      </p>
+                  </a>
+              </li>
+              @*end user list show*@
 
-<<<<<<< HEAD
-                        @*show producer list menu*@
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fab fa-product-hunt"></i>
-                                <p>
-                                    Producer List
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Producer List</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add new Producer</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Update Producer</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end producer list show*@
-
-                        @*show person list menu*@
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Person List
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Person List</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add new Person</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Update Person</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end Person list show*@
-                    </ul>
-                </nav>
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-                        @*show fiml menu*@
-                        <li class="nav-item has-treeview menu-open" id="listF">
-                            <a href="#" class="nav-link active" id="film">
-                                <i class="nav-icon fas fa-film"></i>
-                                <p>
-                                    Film List
-                                    <i class="right fas fa-angle-left" id="filmMenu"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview" id="Menufilm">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active" id="filmList">
-                                        <i class="far fa-circle nav-icon" id="btnFL"></i>
-                                        <p>List Film Page</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" id="filmAdd">
-                                        <i class="far fa-circle nav-icon" id="btnFAdd"></i>
-                                        <p>Add Film Page</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" id="filmNShow">
-                                        <i class="far fa-circle nav-icon" id="btnNS"></i>
-                                        <p>Now Showing</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" id="filmCSoon">
-                                        <i class="far fa-circle nav-icon" id="btnCS"></i>
-                                        <p>Comming Soon</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" id="Revenue">
-                                        <i class="far fa-circle nav-icon" id="btnR"></i>
-                                        <p>Revenue</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end film show*@
-
-                        @*show Bill menu*@
-                        <li class="nav-item has-treeview menu-open" id="ListB">
-                            <a href="#" class="nav-link active" id="bill">
-                                <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                                <p>
-                                    Bill List
-                                </p>
-                            </a>
-                        </li>
-                        @*end Bill show*@
-=======
               @*show ScheduleList menu*@
               <li class="nav-item has-treeview menu-open" id="ListS">
                   <a href="#" class="nav-link active" id="schedule">
@@ -453,7 +208,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                           </a>
                       </li>
                       <li class="nav-item">
-                          <a href="InsertCinema" class="nav-link active" id="AddC">
+                          <a href="Admins/InsertCinema" class="nav-link active" id="AddC">
                               <i class="far fa-circle nav-icon" id="btnAC"></i>
                               <p>Add new Cinema</p>
                           </a>
@@ -499,142 +254,61 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </ul>
               </li>
               @*end producer list show*@
->>>>>>> 5f75146e43c35d65e3bf8acab967c5e245a7b40e
 
-                        @*show user list menu*@
-                        <li class="nav-item has-treeview menu-open" id="ListU">
-                            <a href="#" class="nav-link active" id="user">
-                                <i class="nav-icon fas fa-address-book"></i>
-                                <p>
-                                    User List
-                                </p>
-                            </a>
-                        </li>
-                        @*end user list show*@
+              @*show person list menu*@
+              <li class="nav-item has-treeview menu-open" id="ListPer">
+                  <a href="#" class="nav-link active" id="Person">
+                      <i class="nav-icon fas fa-user"></i>
+                      <p>
+                          Person List
+                          <i class="right fas fa-angle-left" id="personMenu"></i>
+                      </p>
+                  </a>
+                  <ul class="nav nav-treeview" id="Menuperson">
+                      <li class="nav-item">
+                          <a href="#" class="nav-link" id="ListPer">
+                              <i class="far fa-circle nav-icon" id="btnLPer"></i>
+                              <p>Person List</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link active" id="AddPer">
+                              <i class="far fa-circle nav-icon" id="btnAPer"></i>
+                              <p>Add new Person</p>
+                          </a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#" class="nav-link active" id="UpPer">
+                              <i class="far fa-circle nav-icon" id="btnUpPer"></i>
+                              <p>Update Person</p>
+                          </a>
+                      </li>
+                  </ul>
+              </li>
+              @*end Person list show*@
 
-                        @*show ScheduleList menu*@
-                        <li class="nav-item has-treeview menu-open" id="ListS">
-                            <a href="#" class="nav-link active" id="schedule">
-                                <i class="nav-icon fas fa-clipboard-list"></i>
-                                <p>
-                                    Schedule List
-                                    <i class="right fas fa-angle-left" id="scheduleMenu"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview" id="Menuschedule">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active" id="ListS">
-                                        <i class="far fa-circle nav-icon" id="btnSL"></i>
-                                        <p>List Schedule</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" id="AddS">
-                                        <i class="far fa-circle nav-icon" id="btnAS"></i>
-                                        <p>Add New Schedule</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end ScheduleList show*@
 
-                        @*show Cinema menu*@
-                        <li class="nav-item has-treeview menu-open" id="ListC">
-                            <a href="#" class="nav-link active" id="Cinema">
-                                <i class="nav-icon fas fa-house-user"></i>
-                                <p>
-                                    Cinema List
-                                    <i class="right fas fa-angle-left" id="cinemaMenu"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview" id="Menucinema">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" id="ListC">
-                                        <i class="far fa-circle nav-icon" id="btnCL"></i>
-                                        <p>Cinema List</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active" id="AddC">
-                                        <i class="far fa-circle nav-icon" id="btnAC"></i>
-                                        <p>Add new Cinema</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" id="UpC">
-                                        <i class="far fa-circle nav-icon" id="btnUpC"></i>
-                                        <p>Update Cinema</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end Cinema show*@
+              <li class="nav-item">
+                  <a href="#" class="nav-link">
+                      <i class="nav-icon fas fa-th"></i>
+                      <p>
+                          Simple Link
+                          <span class="right badge badge-danger">New</span>
+                      </p>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
 
-                        @*show producer list menu*@
-                        <li class="nav-item has-treeview menu-open" id="ListP">
-                            <a href="#" class="nav-link active" id="Producer">
-                                <i class="nav-icon fab fa-product-hunt"></i>
-                                <p>
-                                    Producer List
-                                    <i class="right fas fa-angle-left" id="producerMenu"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview" id="Menuproducer">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" id="ListP">
-                                        <i class="far fa-circle nav-icon" id="btnLP"></i>
-                                        <p>Producer List</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active" id="AddP">
-                                        <i class="far fa-circle nav-icon" id="btnAP"></i>
-                                        <p>Add new Producer</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active" id="UpP">
-                                        <i class="far fa-circle nav-icon" id="btnUpP"></i>
-                                        <p>Update Producer</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end producer list show*@
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="background: url('../../images/static/background.png'); background-position:center; background-attachment:fixed; background-size: cover;">
+    <!-- Content Header (Page header) -->
+    <!-- /.content-header -->
 
-<<<<<<< HEAD
-                        @*show person list menu*@
-                        <li class="nav-item has-treeview menu-open" id="ListPer">
-                            <a href="#" class="nav-link active" id="Person">
-                                <i class="nav-icon fas fa-user"></i>
-                                <p>
-                                    Person List
-                                    <i class="right fas fa-angle-left" id="personMenu"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview" id="Menuperson">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link" id="ListPer">
-                                        <i class="far fa-circle nav-icon" id="btnLPer"></i>
-                                        <p>Person List</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active" id="AddPer">
-                                        <i class="far fa-circle nav-icon" id="btnAPer"></i>
-                                        <p>Add new Person</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active" id="UpPer">
-                                        <i class="far fa-circle nav-icon" id="btnUpPer"></i>
-                                        <p>Update Person</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        @*end Person list show*@
-=======
     <!-- Main content -->
     <div class="content">
         <div class="container-fluid">
@@ -648,61 +322,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
->>>>>>> 5f75146e43c35d65e3bf8acab967c5e245a7b40e
 
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Simple Link
-                                    <span class="right badge badge-danger">New</span>
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- /.sidebar-menu -->
-            </div>
-            <!-- /.sidebar -->
-        </aside>
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" style="        background: url('../../images/static/pinky.png');
-        background-position: center;
-        background-attachment: fixed;
-        background-size: cover;">
-            <!-- Content Header (Page header) -->
-            <!-- /.content-header -->
-            <!-- Main content -->
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="container">@RenderBody()</div>
-
-                    <!-- /.row -->
-                </div><!-- /.container-fluid -->
-            </div>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-            <div class="p-3">
-                <h5>Title</h5>
-                <p>Sidebar content</p>
-            </div>
-        </aside>
-        <!-- /.control-sidebar -->
-
-
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+    <div class="p-3">
+      <h5>Title</h5>
+      <p>Sidebar content</p>
     </div>
-    <!-- ./wrapper -->
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="~/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/dist/js/adminlte.min.js"></script>
+  </aside>
+  <!-- /.control-sidebar -->
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="~/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/dist/js/adminlte.min.js"></script>
 </body>
 </html>
