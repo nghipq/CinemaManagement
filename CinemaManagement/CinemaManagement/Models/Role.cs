@@ -11,5 +11,17 @@ namespace CinemaManagement.Models
         public String Role_Name { get; set; }
         public String Description { get; set; }
         public Boolean Status { get; set; }
+
+        public Role()
+        {
+        }
+
+        public Role(int id_Role, string role_Name, string description, bool status)
+        {
+            this.id_Role = id_Role;
+            Role_Name = role_Name;
+            Description = description;
+            Status = status;
+        }
     }
 }

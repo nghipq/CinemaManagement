@@ -47,9 +47,9 @@
             @Html.LabelFor(model => model.id_Role, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @{
-                    List<CinemaManagement.Models.Role> role = new CinemaManagement.DAO.RoleDAO().getAllRole();
+                    List<CinemaManagement.Models.Role> RList = new CinemaManagement.DAO.RoleDAO().getAllRole();
                     List<SelectListItem> rSelectionList = new List<SelectListItem>();
-                    role.ForEach(item =>
+                    RList.ForEach(item =>
                     {
                         rSelectionList.Add(new SelectListItem
                         {
